@@ -1,0 +1,144 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+}
+
+.top {
+    margin:0;
+    text-align: center;
+}
+
+div .img1 {
+    width: 180px;
+    height: 60px;
+
+    object-fit: cover;
+
+}
+
+.journeyhead {
+    text-align: center;
+    background-color: #FAFAD2;
+    height: 2.5rem;
+    opacity: 0.4;
+    color: #117777;
+    font-family: 'Ubuntu', sans-serif;
+    cursor: pointer;
+    border-top: 1px solid #F5B041;
+}
+
+.title {
+    width: 40%;
+    margin: auto;
+    text-align: left;
+}
+
+.title h1 {
+    font-size: 35px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 60px;
+
+}
+
+.title p {
+    font-size: 20px;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+div .food {
+    object-fit: cover;
+    border-radius: 15px;
+    
+}
+
+.border {
+    width: 40%;
+    margin: auto;
+    border-left: 1px solid #F5B041;
+    opacity: 0.4;
+    font-size: 20px;
+    text-align: left;
+}
+
+.featured {
+    font-weight: bold;
+    color: #CC7F59;
+}
+
+.food2 {
+    width: 40%;
+    font-size: 20px;
+    margin: auto;
+    border-bottom: 1px solid #CAEDED;
+}
+
+.first-ingredients {
+    width: 40%;
+    font-size: 20px;
+    margin: auto;
+    text-align: left;
+}
+
+.second {
+    width: 40%;
+    margin: auto;
+    text-align: left;
+}
+
+.food3 {
+    width: 40%;
+    font-size: 20px;
+    margin: auto;
+    border-bottom: 1px solid #CAEDED;
+}
+
+.third {
+    width: 40%;
+    margin: auto;
+    text-align: left;
+}
+
+.fourth {
+    width: 40%;
+    font-size: 15px;
+    margin: auto;
+    border-bottom: 1px solid #CAEDED;
+}
+
+.fifth {
+    width: 40%;
+    margin: auto;
+    text-align: left;
+    font-weight: bold;
+}
+
+.sixth {
+    width: 37%;
+    margin: auto;
+    text-align: left;
+    padding: 0px 30px 0px 0px;
+}
+
+.seveth {
+    width: 40%;
+    margin: auto;
+
+}
+
+.copyright {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    font-weight: lighter;
+}
+
+a:visited{
+    text-decoration:none;
+    color:#117777;
