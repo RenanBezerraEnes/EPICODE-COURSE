@@ -1,0 +1,56 @@
+body {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+.container div {
+    width: 210px;
+    height: 210px;
+}
+
+.container {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    margin: 8px;
+}
+
+.red-square {
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #F0002C;
+}
+
+.pink-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color:#E0ABD8;
+}
+
+.yellow-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #F0C800;
+}
+
+.green-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #32A852;
+}
+
+.blue-square {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: #0486D6;
+}
