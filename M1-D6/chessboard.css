@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: #fafafa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.chess {
+    display: flex;
+}
+
+.chess div {
+    display: inline-block;
+
+    width: 60px;
+    height: 60px;
+    
+    border: 1px solid black;
+    background-color: #7400b8;
+
+}
+
+.chess:nth-child(2n + 1) div:nth-child(2n) {
+    background-color: black;
+}
+
+.chess:nth-child(2n) div:nth-child(2n +1) {
+    background-color: black;
+}
+
+.chess:nth-child(2n +1) div:hover {
+    background-color: #006466;
+}
+
+.chess:nth-child(2n) div:hover {
+    background-color: #006466;
+}
+
+.chess span {
+    display: flex;
+    width: 10px;
+    height: 10px;
+
+    position: absolute;
+}
+
+.start {
+    position: absolute;
+    top:220px;
+}
+
+.end {
+    position: absolute;
+    bottom: 225px;
+}
+
+.numbers1 {
+    position: absolute;
+    left: 700px;
+}
+
+.numbers2 {
+    position: absolute;
+    right: 700px;
+}
+
+#a1 {
+    position: absolute;
+    left: 735px;
+}
+
+#b1 {
+    position: absolute;
+    left: 800px;
+}
+
+#c1 {
+    position: absolute;
+    left: 860px;
+}
+
+#d1 {
+    position: absolute;
+    left: 920px;
+}
+
+#e1 {
+    position: absolute;
+    right: 925px;
+}
+
+#f1 {
+    position: absolute;
+    right: 860px;
+}
+
+#g1 {
+    position: absolute;
+    right: 800px;
+}
+
+#h1 {
+    position: absolute;
+    right: 740px;
+}
+
+#a2 {
+    position: absolute;
+    left: 735px;
+}
+
+#b2 {
+    position: absolute;
+    left: 800px;
+}
+
+#c2 {
+    position: absolute;
+    left: 860px;
+}
+
+#d2 {
+    position: absolute;
+    left: 920px;
+}
+
+#e2 {
+    position: absolute;
+    right: 925px;
+}
+
+#f2 {
+    position: absolute;
+    right: 860px;
+}
+
+#g2 {
+    position: absolute;
+    right: 800px;
+}
+
+#h2 {
+    position: absolute;
+    right: 740px;
+}
+
+.item1 {
+    position: absolute;
+    top: 260px;
+}
+
+.item2 {
+    position: absolute;
+    top: 320px;
+}
+
+.item3 {
+    position: absolute;
+    top: 380px;
+}
+
+.item4 {
+    position: absolute;
+    top: 440px;
+}
+
+.item5 {
+    position: absolute;
+    bottom: 450px;
+}
+
+.item6 {
+    position: absolute;
+    bottom: 390px;
+}
+
+.item7 {
+    position: absolute;
+    bottom: 325px;
+}
+
+.item8 {
+    position: absolute;
+    bottom: 260px;
+}
+
+

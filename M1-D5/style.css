@@ -20,6 +20,8 @@
 
 .container span {
     font-size: 20pt;
+    width: 10px;
+    height: 10px;
 }
 
 .container div:nth-child(2n) {
