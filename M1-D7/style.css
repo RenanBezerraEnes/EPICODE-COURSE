@@ -31,7 +31,7 @@
     opacity: 1;
     cursor: pointer;
     z-index: -1;
-    transition: opacity 1s, transform 5s;
+    transition: opacity 2s, transform 5s;
 }
 
 #save {
@@ -55,11 +55,11 @@
     color: #FFFFFF;
     opacity: 1;
     z-index: -1;
-    transition: opacity 1s, transform 5s;
+    transition: opacity 2s, transform 5s;
 }
 
 .container:hover .icons {
-    transform: translateY(1.5in);
+    transform: translateY(2in);
     z-index: 8;
     opacity: 0;
 }
