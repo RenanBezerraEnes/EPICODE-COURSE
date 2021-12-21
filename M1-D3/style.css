@@ -105,6 +105,7 @@ body {
   }
   
   .product1 {
+    position: relative;
     width: 304px;
     height: 379px;
     object-fit: cover;
@@ -112,9 +113,15 @@ body {
     border-radius: 20px;
   }
 
+  .product1:hover button {
+    transition: all 0.4s linear .1s;
+    top: 16px;
+    opacity: 1;
+  }
+
   .buttonbuy {
-    position: relative;
-    top: -514px;
+    position: absolute;
+    top: -344px;
     left: 16.3px;
     overflow: hidden;
     opacity: 0;
@@ -125,10 +132,8 @@ body {
     cursor: pointer;
     border-color: white;
     border-radius: 20px;
-
-    box-shadow: 1px 1px 1px rgba(164,164,164,1);
-    background: rgb(164,164,164);
-    background: linear-gradient(0deg, rgba(164,164,164,0.1) 0%, rgba(187,187,187,1) 100%), rgba(164,164,164,0.1) 0%;
+    transition: all 0.4s linear .2s;
+    background: linear-gradient(90deg, rgba(246, 245, 245, 0.846) 100%, rgba(0,0,0,0.5970763305322129) 100%);
   }
 
   .heart {
@@ -164,11 +169,11 @@ body {
 
   }
 
-  .buttonbuy:hover {
+  /*.buttonbuy:hover {
     transition: all 0.4s linear .2s;
     opacity: 1;
     transform: translateY(1.2in);
-  }
+  }*/
 
   .product2 {
     display: flex;
