@@ -15,6 +15,18 @@ ASSIGNMENT RULES
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 1")
 
+let l1 = prompt("Enter a whole number for the l1 of your rectangle.");
+let l2 = prompt("Enter a whole number for the l2 of your rectangle.");
+
+function area(l1, l2) {
+    // let l1 = prompt("Enter a whole number for the length of your rectangle.");
+    // let l2 = prompt("Enter a whole number for the width of your rectangle.");
+    return l1 * l2
+}
+
+console.log("The area of your rectangle is " + area(l1, l2));
+
+
 
 
 
