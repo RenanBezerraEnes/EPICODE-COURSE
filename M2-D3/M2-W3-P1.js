@@ -15,27 +15,16 @@ ASSIGNMENT RULES
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 1")
 
-let l1 = prompt("Enter a whole number for the l1 of your rectangle.");
-let l2 = prompt("Enter a whole number for the l2 of your rectangle.");
+// let l1 = prompt("Enter a whole number for the l1 of your rectangle.");
+// let l2 = prompt("Enter a whole number for the l2 of your rectangle.");
 
-function area(l1, l2) {
+// function area(l1, l2) {
     // let l1 = prompt("Enter a whole number for the length of your rectangle.");
     // let l2 = prompt("Enter a whole number for the width of your rectangle.");
-    return l1 * l2
-}
+//     return l1 * l2
+// }
 
-console.log("The area of your rectangle is " + area(l1, l2));
-
-
-
-
-
-
-
-
-
-
-
+// console.log("The area of your rectangle is " + area(l1, l2));
 
 
 
@@ -47,6 +36,21 @@ console.log("The area of your rectangle is " + area(l1, l2));
 
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 2")
+
+let integer1 = 10
+let integer2 = 10
+
+function crazySum (integer1, integer2) {
+    if(integer1 === integer2) {
+        return (integer1 + integer2) * 3
+    } else 
+    return integer1 + integer2;
+}
+
+const result = crazySum (integer1, integer2);
+console.log(result)
+
+
 
 /* EXERCISE 3
  Write a function called "crazyDiff" that computes the absolute difference between a given number and 19.
