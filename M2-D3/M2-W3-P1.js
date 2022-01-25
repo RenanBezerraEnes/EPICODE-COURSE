@@ -60,12 +60,33 @@ console.log(result)
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 3")
 
+let nineteen = 19
+let givenNumber = 40
+
+function crazyDiff (nineteen, givenNumber) {
+    let diff = givenNumber - nineteen
+    if(diff > 19) {
+        return diff * 3
+    } else 
+    return diff
+}
+
+const resultDiff = crazyDiff (nineteen, givenNumber);
+console.log(resultDiff)
+
 /* EXERCISE 4
  Write a function called "boundary" which accept an integer parameter n and returns true if n is within 20 and 100 (included) or if n it's equal to 400.
 */
 
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 4")
+
+function boundary (n) {
+    return ((n >= 20 && n <= 100) || n === 400);
+}
+
+console.log(`${boundary(20)}, ${boundary(101)}, ${boundary(400)}`);
+
 
 /* EXERCISE 5
  Write a function called "strivify" which accepts a string as a parameter.
