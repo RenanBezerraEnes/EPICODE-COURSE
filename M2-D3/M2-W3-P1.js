@@ -96,6 +96,14 @@ console.log(`${boundary(20)}, ${boundary(101)}, ${boundary(400)}`);
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 5")
 
+function strivify (str) {
+    return str + "Strive School"
+}
+
+const strChecking = strivify
+console.log(strChecking)
+
+
 /* EXERCISE 6
  Write a function called "check3and7" which accepts a positive number as a parameter and checks if it is a multiple of 3 or a multiple of 7.
  HINT: Modulus Operator
@@ -104,12 +112,33 @@ console.log("EXERCISE 5")
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 6")
 
+function check3and7 (randomNumber) {
+    if (randomNumber % 3 === 0 && randomNumber % 7 === 0) {
+        return randomNumber
+    }
+}
+
+console.log(`${check3and7(20)}, ${check3and7(560)}`)
+
 /* EXERCISE 7
  Write a function called "reverseString" which programmatically reverses a given string (es.: Strive => evirtS).
 */
 
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 7")
+
+let stri = "Strive"
+
+function reverseString (stri) {
+    let revString = "";
+    for (let i = stri.length - 1; i >= 0; i--) {
+        revString += stri[i];
+    }
+    return revString
+}
+
+console.log(reverseString(stri));
+
 
 /* EXERCISE 8
  Write a function called "upperFirst" which capitalizes the first letter of each word of a given string passed as a parameter.
@@ -118,6 +147,17 @@ console.log("EXERCISE 7")
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 8")
 
+function upperFirst(str) {
+    let arr = str.split(" ");
+    let result = arr.map (
+        function(val) {
+            return val.replace(val.charAt(0), val.charAt(0).toUpperCase());
+    })
+    return result.join(" ");
+}
+
+console.log(upperFirst("paris is a nice city"));
+
 /* EXERCISE 9
  Write a function called "cutString" which creates a new string without the first and last character of a given string passed as a parameter.
 */
@@ -125,12 +165,29 @@ console.log("EXERCISE 8")
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 9")
 
+function cutString (str) {
+    return str.substring(1, str.length - 1);
+}
+
+console.log(cutString("JavaScript"));
+
+
 /* EXERCISE 10
  Write a function called "giveMeRandom" which accepts a number n and returns an array containing n random numbers between 0 and 10.
 */
 
 /* WRITE YOUR ANSWER HERE */
 console.log("EXERCISE 10")
+    // let random = nArray + Math.floor(Math.random() * 10) + 1;
+function giveMeRandom (n) {
+    let nArray = [];
+    for(let i = 0; i < n; i++) {
+        nArray.push((Math.floor(Math.random() * 10)));
+    }
+    return nArray
+}
+
+console.log(giveMeRandom(10));
 
 /* WHEN YOU ARE FINISHED
  Commit and push the code to your personal GitHub repository; then post the link of your commit on the Homework section of today's Eduflow.
