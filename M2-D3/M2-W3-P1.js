@@ -97,11 +97,14 @@ console.log(`${boundary(20)}, ${boundary(101)}, ${boundary(400)}`);
 console.log("EXERCISE 5")
 
 function strivify (str) {
-    return str + "Strive School"
+    if(str.startsWith("Strive")){
+        return str
+    } else {
+        return "Strive" + str
+    }
 }
 
-const strChecking = strivify
-console.log(strChecking)
+console.log(strivify("Hello World"))
 
 
 /* EXERCISE 6
