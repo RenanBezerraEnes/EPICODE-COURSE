@@ -1,0 +1,45 @@
+body {
+    max-width: 700px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+}
+
+a {
+    color: rgba(230, 6, 230, 0.883);
+}
+
+.borderAssigned {
+    border: 1px solid rgba(230, 6, 230, 0.883);
+}
+
+table {
+    border-radius: 25px;
+    border-collapse: collapse;
+}
+
+p {
+    margin: 10px;
+}
+
+.changingF_T {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.toHide {
+    text-indent: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+td {
+    border: 1px solid #25f500;
+}
+
+.borderColor {
+    border: 2px dotted red;
+    border-collapse: collapse;
+}
