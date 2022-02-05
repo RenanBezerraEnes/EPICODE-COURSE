@@ -259,6 +259,115 @@ emptyList(parentElement);
 
 //   emptyList4(parentElement);
   
+// EXTRA EXERCISES
+
+// 41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
+// 42) Create a button that will hide every image on the page when clicked
+// 43) Create a button that will hide or show the table on the page when clicked
+// 44) Write a function for calculating the sum of every number inside all the table cells (if their content is numeric) - i don't have numbers.
+// 45) Delete the last letter from the heading each time the user clicks on it
+// 46) Change the background color of a <td> if the user clicks on it
+// 47) Add a delete button at the bottom of the table, when clicked it should delete a random <td>
+// 48) Add automatically a pink border to a cell when the mouse hovers it
+// 49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
+// 50) Write a function to remove the last table from the page
+
+
+// 41) Add an eventListener to show an alert when the cursor hovers a link, displaying its href property
+
+let linkCursor = document.querySelectorAll(".links");
+
+for (let i = 0; i < linkCursor.length; i++) {
+    linkCursor[i].addEventListener("mouseover", e => {
+        alert("You hover the Link");
+    })
+}
+
+// 42) Create a button that will hide every image on the page when clicked
+
+const buttonH = document.querySelector("#buttonhide");
+// const getImg = document.querySelectorAll("img");
+
+buttonH.addEventListener("click", () => {
+    const getImg = document.querySelectorAll(".links");
+    for (let i = 0; i < getImg.length; i++) {
+        getImg[i].style.display = "none";
+    }
+    // getImg.style.visibility = "none";
+})
+
+// 43) Create a button that will hide or show the table on the page when clicked
+
+
+const tableH = document.querySelector("#tablehide");
+
+tableH.addEventListener("click", () => {
+    const getTable = document.querySelector("table");
+    if (getTable.style.display === "none") {
+        getTable.style.display = "block"
+    }
+    else {
+        getTable.style.display = "none";
+    }
+})
+
+
+// 45) Delete the last letter from the heading each time the user clicks on it
+
+
+const deleteH = document.querySelector("#deleteLastLetter");
+
+deleteH.addEventListener("click", () => {
+    let getHeader = document.querySelector("header");
+    getHeader = getHeader(substring(0, getHeader.length - 1));
+})
+
+// 46) Change the background color of a <td> if the user clicks on it
+
+// const backgroundLink = function () {
+//     const getLink = document.querySelectorAll("td a");
+//     for (let i = 0; i < getLink.length; i++) {
+//         getLink[i].style.background = "red";
+//     }
+// }
+
+const changeTd = document.querySelector("#td_bg");
+
+changeTd.addEventListener("click", () => {
+    let getTd = document.querySelectorAll("td");
+    for (let i = 0; i < getTd.length; i++) {
+        getTd[i].style.background = "purple";
+    }
+})
+
+// 47) Add a delete button at the bottom of the table, when clicked it should delete a random <td>
+
+// 48) Add automatically a pink border to a cell when the mouse hovers it
+
+
+const changeColorHover = document.querySelector(".everyTd");
+
+changeColorHover.addEventListener("mouseover", () => {
+    let getTd = document.querySelectorAll("td");
+    for (let i = 0; i < getTd.length; i++) {
+        getTd[i].style.border = "5px solid pink";
+    }
+})
+
+// 49) Write a function to create a table with 4 rows and 3 columns programmatically and add it to the bottom of the page
+
+function createTable () {
+    const getBody = document.querySelector("body");
+    let row = getBody.insertCell()
+    while(row < 4) {
+        let cells = row.insertCell();
+        return cells
+    }
+}
+
+const getElements = createTable()
+
+// 50) Write a function to remove the last table from the page
 
 
 
