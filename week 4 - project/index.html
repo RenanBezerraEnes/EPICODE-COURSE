@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!-- saved from url=(0442)https://s3.eu-west-1.amazonaws.com/eduflow-production/activity-resources/349855696563937.html?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2TAWW44RCEE6YREN%2F20220203%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20220203T173631Z&X-Amz-Expires=600&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%2A%3DUTF-8%27%27M1-D10-QUIZ.html&X-Amz-Signature=75cb524a56c640eaf5920ab2c8fadb3f91d14a002ca9ed0cfed11cc620bc8e11 -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body cz-shortcut-listen="true">
+    <div class="container" id="quiz">
+      <div class="quizTop">
+        <h2 id="questionId">Questions:</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" class="answers" />
+            <label for="a" id="option1">Anwser</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="b" class="answers" />
+            <label for="b" id="option2">Anwser</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="c" class="answers" />
+            <label for="c" id="option3">Anwser</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="d" class="answers" />
+            <label for="d" id="option4">Anwser</label>
+          </li>
+          <div>
+            <button type="submit" id="submit" class="submitButtonClass">
+              Submit
+            </button>
+          </div>
+          <div id="showScore" class="scoreArea"></div>
+        </ul>
+      </div>
+    </div>
+
+    <script>
+      const questions = [
+        {
+          question: "What does CPU stand for?",
+          a: "Central Processing Unit",
+          b: "Central Process Unit",
+          c: "Computer Personal Unit",
+          d: "Central Processor Unit",
+          correct: "a",
+        },
+        {
+          question:
+            "In the programming language Java, which of these keywords would you put on a variable to make sure it doesn't get modified?",
+          a: "Static",
+          b: "Final",
+          c: "Private",
+          d: "Public",
+          correct: "b",
+        },
+        {
+          question:
+            "What is the most preferred image format used for logos in the Wikimedia database?",
+          a: ".png",
+          b: ".jpeg",
+          c: ".svg",
+          d: ".gif",
+          correct: "c",
+        },
+        {
+          question: "In web design, what does CSS stand for?",
+          a: "Computer Style Sheet",
+          b: "Counter Strike: Source",
+          c: "Corrective Style Sheet",
+          d: "Cascading Style Sheet",
+          correct: "d",
+        },
+        {
+          question:
+            "What is the code name for the mobile operating system Android 7.0?",
+          a: "Ice Cream Sandwich",
+          b: "Marshmallow",
+          c: "Jelly Bean",
+          d: "Nougat",
+          correct: "d",
+        },
+        {
+          question: "On Twitter, what is the character limit for a Tweet?",
+          a: "120",
+          b: "100",
+          c: "140",
+          d: "160",
+          correct: "c",
+        },
+        {
+          question:
+            "Which programming language shares its name with an island in Indonesia?",
+          a: "C",
+          b: "Python",
+          c: "Java",
+          d: "Jakarta",
+          correct: "c",
+        },
+      ];
+      //The whole Div
+      const getQuiz = document.querySelector("#quiz");
+
+      //FROM HERE
+
+      //Every INPUT
+      const getAnswer = document.querySelectorAll(".answers");
+      //H2
+      const getQuestions = document.querySelector("#questionId");
+      //H2 ABOVE.
+
+      //LABELS
+      const question_A = document.querySelector("#option1");
+      const question_B = document.querySelector("#option2");
+      const question_C = document.querySelector("#option3");
+      const question_D = document.querySelector("#option4");
+
+      //BUTTON
+      const submit_Button = document.querySelector("#submit");
+
+      //SCORE
+
+      const showScore = document.querySelector("#showScore");
+
+      let currentScore = 0;
+      let score = 0;
+
+      const loadQuestions = () => {
+        const questionsList = questions[currentScore];
+
+        getQuestions.innerText = questionsList.question;
+
+        question_A.innerText = questionsList.a;
+        question_B.innerText = questionsList.b;
+        question_C.innerText = questionsList.c;
+        question_D.innerText = questionsList.d;
+      };
+
+      loadQuestions();
+
+      const getCorrectAnswer = () => {
+        let correctAnswer;
+
+        getAnswer.forEach((AnswerElement) => {
+          if (AnswerElement.checked) {
+            correctAnswer = AnswerElement.id;
+          }
+        });
+        return correctAnswer;
+      };
+
+      submit_Button.addEventListener("click", () => {
+        const checking = getCorrectAnswer();
+        console.log(checking);
+
+        if (checking == questions[currentScore].correct) {
+          score++;
+        }
+
+        currentScore++;
+
+        if (currentScore < questions.length) {
+          loadQuestions();
+        } else {
+          showScore.innerHTML = `
+      <h3> You Scored ${score}/${questions.length} </h3>
+      <button class="submit" onclick"="location.reload()"> Play Again </button> 
+    `;
+          showScore.classList.remove("scoreArea");
+        }
+      });
+
+      window.onload = function () {};
+    </script>
+  </body>
+</html>
