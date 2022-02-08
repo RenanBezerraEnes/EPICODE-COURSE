@@ -65,4 +65,8 @@ a.float-right.mb-3.mr-3 {
 
 /* 11 Write a selector to target the “Newer” button at the bottom */
 
+nav.blog-pagination a.btn.btn-outline-secondary.disabled {
+    color: red;
+}
+
 /* 12 Write a selector to target the footer's second link */
