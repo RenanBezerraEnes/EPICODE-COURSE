@@ -96,3 +96,25 @@ nav.blog-pagination a.btn.btn-outline-secondary.disabled {
 footer.blog-footer p.text-center a:nth-of-type(2) {
     color: blueviolet;
 }
+
+
+/* I just used the Css to practice getting the elemtent and the applied it to js */
+/* aside.col-md-4.blog-sidebar div.p-4:nth-of-type(3) ol.list-unstyled li:nth-of-type(2) a{
+    color: rgb(79, 129, 129);
+} */
+
+/* .jumbotron.p-4.p-md-5.rounded div.col-md-6.px-0 {
+    background-color: black;
+} */
+
+/* div.blog-post p.blog-post-meta a {
+    color: black;
+} */
+
+/* div.blog-post:nth-of-type(2) p.blog-post-meta a {
+    color: green;
+}
+
+div.blog-post:nth-of-type(3) p.blog-post-meta a {
+    color: red;
+} */
