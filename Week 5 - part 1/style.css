@@ -19,8 +19,8 @@ EXTRA Write a JavaScript functionality that will create an alert with the name o
 
 /* 1 Write a selector to target the h1 in the first “hero” section */
 
-.blog-post .blog-post-title {
-    color: blueviolet;
+div.blog-post:nth-of-type(1) h2.blog-post-title {
+    color: red;
 }
 
 /*2 - Write a selector to target every children of the navbar */
@@ -41,12 +41,17 @@ EXTRA Write a JavaScript functionality that will create an alert with the name o
 
 
 /* 4 - Write a selector to target the first blogpost */
-/* .col-md-8.blog-main div.blog-post h2,p,hr,blockquote{
-    background-color: brown;
-} */
+
+div.blog-post:nth-of-type(1) {
+    background-color: blueviolet;
+}
 
 
 /* 5 Write a selector to target the first blogpost <hr> and turn it red */
+
+div.blog-post:nth-of-type(1) hr {
+    background-color: aqua;
+}
 
 /* 6 Write a selector to target the "even" links in the navbar */
 
