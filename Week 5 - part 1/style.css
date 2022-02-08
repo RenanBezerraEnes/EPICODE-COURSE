@@ -70,3 +70,7 @@ nav.blog-pagination a.btn.btn-outline-secondary.disabled {
 }
 
 /* 12 Write a selector to target the footer's second link */
+
+footer.blog-footer p.text-center a:nth-of-type(2) {
+    color: blueviolet;
+}
