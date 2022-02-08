@@ -33,9 +33,9 @@ EXTRA Write a JavaScript functionality that will create an alert with the name o
 } */
 
 /* 4 - Write a selector to target the first blogpost */
-div.col-md-6 .position-static:nth-of-type(1) > .text-primary,.mb-0 {
+/* div.col-md-6 .position-static:nth-of-type(1) > .text-primary,.mb-0 {
     background-color: orange;
-}
+} */
 
 
 /* 5 Write a selector to target the first blogpost <hr> and turn it red */
@@ -47,15 +47,20 @@ div.col-md-6 .position-static:nth-of-type(1) > .text-primary,.mb-0 {
 }
 
 
-/* 7 Write a selector to target all the <li> into the first ordered-list in the sidebar ( Archives ) */
-/* 
-ol.list-unstyled .mb-0 > li * {
-    background-color: rgb(251, 0, 239);
-} */
+/* 7 Write a selector to target all the <li> into the first ordered-list in the sidebar ( Archives ) */ 
+aside.col-md-4.blog-sidebar div.p-4 ol.list-unstyled.mb-0 > li {
+    background-color: aqua;
+}
+
 
 /* 8 Write a selector to target the second blog-post author */
 
 /* 9 Write a selector to target the second <li> in the third blog-post unordered-list */
+
+div.blog-post ul > li:nth-of-type(2) {
+    color: blue;
+}
+
 
 /* 10 Write a selector to target the "back to top" link you can find at the bottom-right corner */
 
