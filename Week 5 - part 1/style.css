@@ -17,6 +17,12 @@ EXTRA Write a JavaScript functionality that will remove the corresponding parent
 EXTRA Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers with the mouse on an author name */
 
 
+/* 1 Write a selector to target the h1 in the first “hero” section */
+
+.blog-post .blog-post-title {
+    color: blueviolet;
+}
+
 /*2 - Write a selector to target every children of the navbar */
 
 .nav * {
@@ -32,9 +38,11 @@ EXTRA Write a JavaScript functionality that will create an alert with the name o
     color: aqua;
 } */
 
+
+
 /* 4 - Write a selector to target the first blogpost */
-/* div.col-md-6 .position-static:nth-of-type(1) > .text-primary,.mb-0 {
-    background-color: orange;
+/* .col-md-8.blog-main div.blog-post h2,p,hr,blockquote{
+    background-color: brown;
 } */
 
 
@@ -54,6 +62,10 @@ aside.col-md-4.blog-sidebar div.p-4 ol.list-unstyled.mb-0 > li {
 
 
 /* 8 Write a selector to target the second blog-post author */
+
+div.blog-post:nth-of-type(2) p.blog-post-meta a {
+    color: red;
+}
 
 /* 9 Write a selector to target the second <li> in the third blog-post unordered-list */
 
