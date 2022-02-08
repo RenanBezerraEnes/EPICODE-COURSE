@@ -1,0 +1,36 @@
+/* then:
+
+1 Write a selector to target the h1 in the first “hero” section
+2 Write a selector to target every children of the navbar
+3 Write a selector to target the "continue reading..." inside the jumbotron
+4 Write a selector to target the first blogpost
+5 Write a selector to target the first blogpost <hr> and turn it red
+6 Write a selector to target the "even" links in the navbar
+7 Write a selector to target all the <li> into the first ordered-list in the sidebar ( Archives )
+8 Write a selector to target the second blog-post author
+9 Write a selector to target the second <li> in the third blog-post unordered-list
+10 Write a selector to target the "back to top" link you can find at the bottom-right corner
+11 Write a selector to target the “Newer” button at the bottom
+12 Write a selector to target the footer's second link
+EXTRA Write a JavaScript functionality to remove the “twitter” link under the “Elsewhere” section in the aside element. It should happen when the page loads, automatically.
+EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link 
+EXTRA Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers with the mouse on an author name */
+
+
+/*2 - Write a selector to target every children of the navbar */
+
+.nav > * {
+    color: red;
+}
+
+/*3 - Write a selector to target the "continue reading..." inside the jumbotron */
+.jumbotron p:last-of-type {
+    color: aqua;
+}
+
+/* 4 - Write a selector to target the first blogpost */
+
+.jumbotron .col-md-6 + .px-0 {
+    background-color: rgb(39, 187, 39);
+}
+
