@@ -19,18 +19,48 @@ EXTRA Write a JavaScript functionality that will create an alert with the name o
 
 /*2 - Write a selector to target every children of the navbar */
 
-.nav > * {
+.nav * {
     color: red;
 }
 
 /*3 - Write a selector to target the "continue reading..." inside the jumbotron */
-.jumbotron p:last-of-type {
+/* Either one way or the other way */
+.jumbotron .mb-0 a:last-of-type {
     color: aqua;
 }
+/* .jumbotron .mb-0 a:last-of-type {
+    color: aqua;
+} */
 
 /* 4 - Write a selector to target the first blogpost */
+/* 
+.col.p-4.d-flex.flex-column.position-static  {
+    background-color: blueviolet;
+} */
 
-.jumbotron .col-md-6 + .px-0 {
-    background-color: rgb(39, 187, 39);
+
+
+
+
+
+
+/* 5 Write a selector to target the first blogpost <hr> and turn it red */
+
+/* 6 Write a selector to target the "even" links in the navbar */
+
+.nav span:nth-of-type(even) {
+    color: rgb(3, 243, 83);
 }
 
+
+/* 7 Write a selector to target all the <li> into the first ordered-list in the sidebar ( Archives ) */
+
+/* 8 Write a selector to target the second blog-post author */
+
+/* 9 Write a selector to target the second <li> in the third blog-post unordered-list */
+
+/* 10 Write a selector to target the "back to top" link you can find at the bottom-right corner */
+
+/* 11 Write a selector to target the “Newer” button at the bottom */
+
+/* 12 Write a selector to target the footer's second link */
