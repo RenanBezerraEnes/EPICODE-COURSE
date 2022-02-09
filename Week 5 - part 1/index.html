@@ -417,16 +417,13 @@
       // EXTRA Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers with the mouse on an author name
 
       // EXTRA Write a JavaScript functionality that will remove the corresponding parent card from the DOM, upon clicking on their “Continue reading” link
-      // const removeParent = document.querySelector(".jumbotron.p-4.p-md-5.rounded div.col-md-6.px-0");
-    //   const getR = document.querySelector(".font-weight-bold").parentElement.parentElement;
-      const removeParent = document.querySelector(".jumbotron .mb-0 a:last-of-type");
-    //   const getR = document.querySelector(".font-weight-bold").parentElement.parentElement; 
-
-      removeParent.addEventListener("onclick", () => {
+        const removeParent = document.querySelector(".lead.mb-0 .font-weight-bold");
         const getR = document.querySelector(".font-weight-bold").parentElement.parentElement; 
-        // getR.style.display = "none";
-        // getR.remove();
+        removeParent.addEventListener("click", () => {
+        getR.style.display = "none";
       });
+
+      console.log(removeParent);
 
       // EXTRA Write a JavaScript functionality that will create an alert with the name of the author every time the user hovers with the mouse on an author name
       const Authors = document.querySelectorAll(
