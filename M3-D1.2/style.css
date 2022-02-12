@@ -4,7 +4,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: black;
 }
 
 nav {
@@ -42,6 +41,10 @@ nav img {
     cursor: pointer;
 }
 
+.container div:hover {
+    background-color: #1f1f12;
+}
+
 .container div span {
     color: #612C1A;
 }
@@ -56,14 +59,85 @@ div.grow {
     font-weight: bold;
 }
 
+.product_card {
+    display: flex;
+    flex-direction: column;
+    width: 325px;
+    border-radius: 120px;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow: hidden;
+    background-color: #FFF3D1;
+    color: #612C1A;
+}
+
+.title_description_main {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.title_description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+.title_description p:first-child {
+    font-weight: bold;
+}
+
+.title_description h5 {
+    margin-top: 10px;
+    padding: 0;
+}
+
+.title_description p {
+    margin: 0;
+}
+
+div.button_cart {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 20px;
+}
+
+
+.product_card img {
+    width: auto;
+    height: 320px;
+    object-fit: cover;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F3DF85;
+    border: none;
+    width: 150px;
+    height: 35px;
+    border-radius: 20px;
+    color: #612C1A;
+    font-weight: bold;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #1f1f12;
+}
+
 .secondContainer {
     display: flex;
     align-items: center;
-    width: 700px;
-    height: 300px;
+    max-width: 700px;
+    height: auto;
     background-color: #FFF3D1;
     margin-top: 20px;
     margin-left: 20px;
+    padding: 10px;
     gap: 50px;
     border-radius: 20px;
     color: #612C1A;
@@ -71,6 +145,7 @@ div.grow {
 
 .secondContainer img {
     width: 350px;
+    flex-shrink: 0;
     object-fit: cover;
     padding-left: 20px;
 }
@@ -78,4 +153,16 @@ div.grow {
 .secondContainer_text {
     display: flex;
     flex-direction: column;
+}
+
+@media all and (max-width: 905px){
+    div.secondContainer {
+        width: unset;
+        flex-direction: column-reverse;
+        gap: 0;
+    }
+    .secondContainer img {
+        min-width: 50px;
+        min-height: 50px;
+    }
 }
