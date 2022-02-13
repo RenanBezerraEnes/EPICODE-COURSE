@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="button_cart">
-                <button>Add to cart</button>
+                <button id="button_add">Add to cart</button>
             </div>
     </div>
 
@@ -47,5 +47,13 @@
         </p>
       </div>
     </div>
+
+    <script>
+      const getButton = document.querySelector("#button_add");
+
+      getButton.addEventListener("click", ()=> {
+        alert("You clicked the button");
+      });
+    </script>
   </body>
 </html>
