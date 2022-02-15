@@ -22,12 +22,13 @@ body {
     object-fit: cover;
 }
 
-.container {
+.container li{
     color: aliceblue;
 }
 
 .container li:hover {
     color: #212517;
+    text-decoration: none;
     cursor: pointer;
 }
 
