@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css" />
-    
+
     <title>Spotify</title>
   </head>
   <body>
@@ -37,7 +37,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#"
+            <a class="nav-link" href="index.html"
               >Home <span class="sr-only">(current)</span></a
             >
           </li>
@@ -56,7 +56,9 @@
               Resources
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="videos.html" target="_blank">Videos</a>
+              <a class="dropdown-item" href="videos.html" target="_blank"
+                >Videos</a
+              >
               <a class="dropdown-item" href="#">News</a>
               <a class="dropdown-item" href="#">Events</a>
               <a class="dropdown-item" href="#">Promo Cards</a>
@@ -91,59 +93,81 @@
 
     <div class="container">
       <div class="row">
-        <div class="col-1"><img
+        <div class="col-1">
+          <img
             class="spotify_img_footer"
             src="data:image/png;base64,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"
             alt=""
-          /></div>
-        <div class="col-3 first_bar_footer">
-            <ul class="list-unstyled">
-                <li class="nav-item">
-                    <a class="nav-link disabled">HELPFUL LINKS</a>
-                  </li>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>About</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Press & Media</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Contact us</li></a>
-            </ul>
+          />
         </div>
         <div class="col-3 first_bar_footer">
-            <ul class="list-unstyled">
-                <li class="nav-item">
-                    <a class="nav-link disabled">CREATOR TOOLS</a>
-                  </li>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Soundtrap</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Spotify for Podcasters</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Noteable</li></a>
-            </ul>
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a class="nav-link disabled">HELPFUL LINKS</a>
+            </li>
+            <a href="https://www.spotify.com/about-us/contact/" target="_blank"
+              ><li>About</li></a
+            >
+            <a href="https://www.spotify.com/about-us/contact/" target="_blank"
+              ><li>Press & Media</li></a
+            >
+            <a href="https://artists.spotify.com/contact" target="_blank"
+              ><li>Contact us</li></a
+            >
+          </ul>
         </div>
         <div class="col-3 first_bar_footer">
-            <ul class="list-unstyled">
-                <li class="nav-item">
-                    <a class="nav-link disabled">COMMUNITIES</a>
-                  </li>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Services for artists</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Developers</li></a>
-                  <a href="https://www.spotify.com/about-us/contact/" target="_blank"><li>Investors</li></a>
-            </ul>
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a class="nav-link disabled">CREATOR TOOLS</a>
+            </li>
+            <a
+              href="https://www.soundtrap.com/?utm_source=spotify_site&utm_medium=footer_menulink&utm_campaign=alwayson_global_soundtrap_destination"
+              target="_blank"
+              ><li>Soundtrap</li></a
+            >
+            <a href="https://podcasters.spotify.com/?utm_source=artists.spotify.com" target="_blank"
+              ><li>Spotify for Podcasters</li></a
+            >
+            <a href="https://noteable.spotify.com/?utm_source=artists.spotify.com" target="_blank"
+              ><li>Noteable</li></a
+            >
+          </ul>
+        </div>
+        <div class="col-3 first_bar_footer">
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a class="nav-link disabled">COMMUNITIES</a>
+            </li>
+            <a href="https://www.spotify.com/about-us/contact/" target="_blank"
+              ><li>Services for artists</li></a
+            >
+            <a href="https://www.spotify.com/about-us/contact/" target="_blank"
+              ><li>Developers</li></a
+            >
+            <a href="https://www.spotify.com/about-us/contact/" target="_blank"
+              ><li>Investors</li></a
+            >
+          </ul>
         </div>
         <div class="col-2 first_bar_footer">
-            <ul class="list-unstyled">
-                <li class="nav-item">
-                    <a class="nav-link disabled">GET THE APP</a>
-                  </li>
-                  <li>
-                   <a href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjsz8_WrYL2AhWa6HcKHQeRCbcYABAAGgJlZg&ohost=www.google.com&cid=CAESWOD2Q9CEhhspSozpq7GEjFiPoNuYWaMBdk2LPZtUxDdV25Hm_k4Bg5yLBfdyDsUDgIjDDSJV8XcD0Twbb4ByyFT5I8Pab-1MFM4zB4CRIRx9JGm8wreX2pI&sig=AOD64_1u2zsi7S4M6H3B885VgYlOn--2fQ&q&adurl&ved=2ahUKEwi0xMXWrYL2AhUch_0HHVroAzEQ0Qx6BAgDEAE_blank"
-                   target="_blank"
-                   >
-                   <img class="stores_img" src="./assets/PlayStore.jpg" alt=""></a>
-                   <a href="https://www.apple.com/app-store/"
-                    target="_blank"
-                   >
-                   <img class="stores_img" src="./assets/AppleStore.jpg" alt=""></a>
-                  </li>
-            </ul>
+          <ul class="list-unstyled">
+            <li class="nav-item">
+              <a class="nav-link disabled">GET THE APP</a>
+            </li>
+            <li>
+              <a
+                href="https://www.googleadservices.com/pagead/aclk?sa=L&ai=DChcSEwjsz8_WrYL2AhWa6HcKHQeRCbcYABAAGgJlZg&ohost=www.google.com&cid=CAESWOD2Q9CEhhspSozpq7GEjFiPoNuYWaMBdk2LPZtUxDdV25Hm_k4Bg5yLBfdyDsUDgIjDDSJV8XcD0Twbb4ByyFT5I8Pab-1MFM4zB4CRIRx9JGm8wreX2pI&sig=AOD64_1u2zsi7S4M6H3B885VgYlOn--2fQ&q&adurl&ved=2ahUKEwi0xMXWrYL2AhUch_0HHVroAzEQ0Qx6BAgDEAE_blank"
+                target="_blank"
+              >
+                <img class="stores_img" src="./assets/PlayStore.jpg" alt=""
+              /></a>
+              <a href="https://www.apple.com/app-store/" target="_blank">
+                <img class="stores_img" src="./assets/AppleStore.jpg" alt=""
+              /></a>
+            </li>
+          </ul>
         </div>
-        
       </div>
     </div>
 

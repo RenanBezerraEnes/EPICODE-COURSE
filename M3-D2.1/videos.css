@@ -1,0 +1,54 @@
+body {
+    background-color: rgba(0, 0, 0);
+}
+
+.backnav {
+background-color: rgb(0,0,0);
+}
+
+
+.spotify_img {
+width: 100px;
+height: auto;
+object-fit: cover;
+}
+
+.Navbar_margin_left {
+margin-left: 30%;
+}
+
+.img_front {
+    width: 100%;
+    object-fit: contain;
+    height: 500px;
+}
+
+.container li{
+color: aliceblue;
+}
+
+.container li:hover {
+color: #212517;
+text-decoration: none;
+cursor: pointer;
+}
+
+.spotify_img_footer {
+width: 60px;
+height: auto;
+object-fit: cover;
+}
+
+.first_bar_footer li {
+margin: 20px;
+}
+
+.first_bar_footer .stores_img {
+width: 50px;
+object-fit: cover;
+}
+
+.col-2.first_bar_footer .list-unstyled li {
+display: flex;
+gap: 20px;
+}
