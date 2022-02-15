@@ -148,6 +148,7 @@ button:hover {
     flex-shrink: 0;
     object-fit: cover;
     padding-left: 20px;
+    overflow: hidden;
 }
 
 .secondContainer_text {
@@ -164,5 +165,6 @@ button:hover {
     .secondContainer img {
         min-width: 50px;
         min-height: 50px;
+        overflow: hidden;
     }
 }
