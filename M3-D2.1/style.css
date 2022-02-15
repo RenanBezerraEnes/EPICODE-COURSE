@@ -19,8 +19,16 @@ body {
 
 .img_front {
     width: 100%;
-    height: 500px;
     object-fit: cover;
+}
+
+.container {
+    color: aliceblue;
+}
+
+.container li:hover {
+    color: #212517;
+    cursor: pointer;
 }
 
 .spotify_img_footer {
@@ -32,4 +40,15 @@ body {
 .first_bar_footer li {
     margin: 20px;
 }
+
+.first_bar_footer .stores_img {
+    width: 50px;
+    object-fit: cover;
+}
+
+.col-2.first_bar_footer .list-unstyled li {
+    display: flex;
+    gap: 20px;
+}
+
 
