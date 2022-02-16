@@ -52,3 +52,13 @@ object-fit: cover;
 display: flex;
 gap: 20px;
 }
+
+.container.change_space {
+    margin-top: 20px;
+}
+
+.container.change_space .row .col-sm-12.col-md-4.col-lg-3 .card:hover {
+    width: 260px;
+    cursor: pointer;
+}
+
