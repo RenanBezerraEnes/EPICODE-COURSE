@@ -657,21 +657,45 @@
     
   </div>
 </div>
-<!-- I Created this function to remove every card in the page but you can only apply it on console -->
+<!-- I Created this function to display every card in the page but you can only apply it on console -->
     <script>
+      // const getCards = document.querySelectorAll(".card");
+      // const removeCard = () => {
+      //   getCards.forEach(element => {
+      //     element.style.display = "none";
+      //   });
+      // }
+
+// I Created this function to remove every card in the page but you can only apply it on console
       const getCards = document.querySelectorAll(".card");
       const removeCard = () => {
         getCards.forEach(element => {
-          element.style.display = "none";
+          element.remove();
         });
       }
+      
 
-      const sumTotal = []
+      // const sumTotal = []
+
+      // for (let i = 0; i < getCards.length; i++) {
+      //   const sum = getCards[i];
+      //   sumTotal.push(parseInt(sum));
+      // }
+
+      // for (let i = 0; i < getCards.length; i++) {
+      //     console.log(getCards[i]);
+      // }
+      
+
+
+      let sumTotal = 0;
 
       for (let i = 0; i < getCards.length; i++) {
-        const sum = getCards[i];
-        sumTotal.push(sum)
-      }
+        sumTotal++
+      };
+
+      console.log(sumTotal)
+
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
