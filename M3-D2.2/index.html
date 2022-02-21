@@ -659,12 +659,12 @@
 </div>
 <!-- I Created this function to display every card in the page but you can only apply it on console -->
     <script>
-      // const getCards = document.querySelectorAll(".card");
-      // const removeCard = () => {
-      //   getCards.forEach(element => {
-      //     element.style.display = "none";
-      //   });
-      // }
+      const getCards = document.querySelectorAll(".card");
+      const removeCard = () => {
+        getCards.forEach(element => {
+          element.style.display = "none";
+        });
+      }
 
 // I Created this function to remove every card in the page but you can only apply it on console
       const getCards = document.querySelectorAll(".card");
@@ -673,28 +673,24 @@
           element.remove();
         });
       }
+
       
-
-      // const sumTotal = []
-
-      // for (let i = 0; i < getCards.length; i++) {
-      //   const sum = getCards[i];
-      //   sumTotal.push(parseInt(sum));
-      // }
-
-      // for (let i = 0; i < getCards.length; i++) {
-      //     console.log(getCards[i]);
-      // }
-      
-
+      // Calculate the name of travels
 
       let sumTotal = 0;
-
       for (let i = 0; i < getCards.length; i++) {
         sumTotal++
       };
 
       console.log(sumTotal)
+
+      // Calculate the name of travels
+      console.log(getCards.length);
+
+      // Calculate the name of travels
+      console.log(document.querySelectorAll(".card").length);
+      
+      
 
 
     </script>
