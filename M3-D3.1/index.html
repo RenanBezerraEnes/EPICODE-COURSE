@@ -108,23 +108,39 @@
             </div>
           </li>
         </ul>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" color="black" fill="currentColor" class="bi bi-bell mr-3" viewBox="0 0 16 16">
+
+        <div class="icon_bell d-flex justify-content-center align-items-center position-relative">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell text-center" viewBox="0 0 16 16">
             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>
-          </svg>
-        <img src="./assets/avatar-1.jpg" alt="avatar 1" height="32" class="rounded-circle">
+        </svg>
+        </div>
+        <div class="dropdown position-relative">
+            <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+                aria-expanded="false">
+                <img src="./assets/avatar-1.jpg" alt="avatar 1" height="32" class="rounded-circle mr-1">
+            </button>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
+
       </div>
     </nav>
 
     <div class="container-fluid bg-color">
     <div class="container">
-    <div class="row row-cols-sm-6 row-cols-md-4 row-cols-xl-3 d-flex justify-content-around">
-        <div class="col">
+    <div class="row d-flex flex-column flex-md-row justify-content-around">
+        <div class="col col py-5 d-flex flex-column justify-content-center">
         <h1>Welcome Web Students!</h1>
         <p style="color: #C2BDBD;">Hand-picked instructor and expertly crafted courses, designed for the modern students and entrepur.</p>
-        <button type="button" class="btn btn-success btn-m">Browse Courses</button>
-        <button type="button" class="btn btn-light btn-m">Are you instructor?</button>
+        <div class="d-flex">
+        <button type="button" class="btn btn-success btn-sm mr-2">Browse Courses</button>
+        <button type="button" class="btn btn-light btn-sm">Are you instructor?</button>
         </div>
-        <div class="col">
+        </div>
+        <div class="col d-flex flex-column justify-content-end">
             <img src="./assets/hero-img.png" alt="hero" class="img-fluid">
         </div>
     </div>
@@ -133,14 +149,65 @@
 
     <div class="container-fluid">
         <div class="container">
-            <div class="row row-cols-sm-6 row-cols-md-4 row-cols-xl-3">
-                <div class="col">
+            <div class="row d-flex justify-content-around">
+                <div class="col d-flex mt-3">
+                    <div class="icon_camera d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="brown" class="bi bi-camera-video" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M0 5a2 2 0 0 1 2-2h7.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 4.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 13H2a2 2 0 0 1-2-2V5zm11.5 5.175 3.5 1.556V4.269l-3.5 1.556v4.35zM2 4a1 1 0 0 0-1 1v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H2z"/>
+                    </svg>
+                    </div>
+                    <div class="m-0">
+                        <p class="mb-0 ml-2"; style="color: black; font-size: 10pt; font-weight: bold;">30,000 online courses</p>
+                        <p class="text-muted mb-0 ml-2" style="color:black; font-size:8pt;">Enjoy a variety of fresh topics</p>
+                    </div>
+                </div>
+                <div class="col d-flex mt-3">
+                    <div class="icon_camera d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="brown" class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                      </svg>
+                    </div>
+                      <div class="m-0">
+                        <p class="mb-0 ml-2"; style="color: black; font-size: 10pt; font-weight: bold;">Expert instruction</p>
+                        <p class="text-muted mb-0 ml-2" style="color:black; font-size:8pt;">Find the right instructor for you</p>
+                    </div>
+                </div>
 
+                <div class="col d-flex mt-3">
+                    <div class="icon_camera d-flex justify-content-center align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="brown" class="bi bi-clock" viewBox="0 0 16 16">
+                        <path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+                        <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/>
+                      </svg>
+                    </div>
+                      <div class="m-0">
+                        <p class="mb-0 ml-2"; style="color: black; font-size: 10pt; font-weight: bold;">Lifetime access</p>
+                        <p class="text-muted mb-0 ml-2" style="color:black; font-size:8pt;">Learn on your schedule</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
+
+    <div class="container-fluid mt-5" style="background-color: #F5F4F8;">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <p>asasasas</p>
+                <p>asasasas</p>
+
+                <p>asasasas</p>
+
+                  <p>asasasas</p>
+                  <p>asasasas</p>
+                  <p>asasasas</p>
+
+                  <p>asasasas</p>
+            </div>
+        </div>
+    </div>
+</div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"

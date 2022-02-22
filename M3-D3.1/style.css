@@ -5,3 +5,30 @@ body {
 div.container-fluid.bg-color {
     background-color: #7550FE;
 }
+
+div.icon_bell {
+    background-color: #b5b5b6;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+div.icon_bell:after {
+        content: "";
+        position: absolute;
+        background-color: #7550FE;
+        width: 10px;
+        height: 10px;
+        right: 2px;
+        top: 2px;
+        border-radius: 50px;
+        border: 2px solid white;
+}
+
+div.icon_camera {
+    display: flex;
+    background-color: #FFEEDA;
+    width: 32px;
+    height: 32px;
+    border-radius: 50px;
+}
