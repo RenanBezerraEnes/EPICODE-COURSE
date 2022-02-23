@@ -43,3 +43,46 @@ div.icon_camera {
     height: 16px;
     width: 16px;
 }
+
+/* First Carousel */
+#firstCarousel .carousel-control-prev,
+#firstCarousel .carousel-control-next {
+    width: 20px;
+}
+
+#firstCarousel .carousel-control-prev {
+    left: -20px;
+}
+
+#firstCarousel .carousel-control-next {
+    right: -20px;
+}
+
+/* Second Carousel */
+#secondCarousel .carousel-control-prev,
+#secondCarousel .carousel-control-next {
+    width: 20px;
+}
+
+#secondCarousel .carousel-control-prev {
+    left: -20px;
+}
+
+#secondCarousel .carousel-control-next {
+    right: -20px;
+}
+
+/* Last Carousel */
+
+#lastCarousel .carousel-control-prev,
+#lastCarousel .carousel-control-next {
+    width: 20px;
+}
+
+#lastCarousel .carousel-control-prev {
+    left: -20px;
+}
+
+#lastCarousel .carousel-control-next {
+    right: -20px;
+}
