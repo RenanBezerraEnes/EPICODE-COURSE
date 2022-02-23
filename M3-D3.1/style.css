@@ -32,3 +32,12 @@ div.icon_camera {
     height: 32px;
     border-radius: 50px;
 }
+
+.titlesColor {
+     color: #716B86;
+}
+
+.imgOfCourseCards {
+    height: 16px;
+    width: 16px;
+}
