@@ -86,3 +86,8 @@ div.icon_camera {
 #lastCarousel .carousel-control-next {
     right: -20px;
 }
+
+a.m-1:hover {
+    text-decoration: none;
+    color: #b6b4b4!important;
+}
