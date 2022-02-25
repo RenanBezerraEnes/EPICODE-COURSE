@@ -149,36 +149,36 @@
                     </tr>
                   </thead>
                   <tbody class="table-dark w-100 mw-100">
-                    <tr>
+                    <tr class="button_Delete_First">
                       <th scope="row">1</th>
                       <td>Numb</td>
                       <td>Linkin Park</td>
                       <td>3:07</td>
-                      <td><button type="button" class="btn btn-danger button_delete">Delete</button></td>
+                      <td><button type="button" class="btn btn-danger" id="button_delete1">Delete</button></td>
                     </tr>
 
-                    <tr>
+                    <tr class="button_Delete_Second">
                       <th scope="row">2</th>
                       <td>Bon Jovi</td>
                       <td>It's my Life</td>
                       <td>4:27</td>
-                      <td><button type="button" class="btn btn-danger button_delete">Delete</button></td>
+                      <td><button type="button" class="btn btn-danger" id="button_delete2">Delete</button></td>
                     </tr>
 
-                    <tr>
+                    <tr class="button_Delete_Third">
                       <th scope="row">3</th>
                       <td>Oasis</td>
                       <td>Wonderwall</td>
                       <td>4:38</td>
-                      <td><button type="button" class="btn btn-danger button_delete">Delete</button></td>
+                      <td><button type="button" class="btn btn-danger" id="button_delete3">Delete</button></td>
                     </tr>
 
-                    <tr>
+                    <tr class="button_Delete_Last">
                       <th scope="row">4</th>
                       <td>Coldplay</td>
                       <td>Hymn For The Weekend</td>
                       <td>4:21</td>
-                      <td><button type="button" class="btn btn-danger button_delete">Delete</button></td>
+                      <td><button type="button" class="btn btn-danger" id="button_delete4">Delete</button></td>
                     </tr>
                   </tbody>
                 </table>
@@ -199,7 +199,36 @@
     ></script>
 
     <script>
+      const getElement_1_Remove = document.querySelector(".button_Delete_First");
+      const getElement_2_Remove = document.querySelector(".button_Delete_Second");
+      const getElement_3_Remove = document.querySelector(".button_Delete_Third");
+      const getElement_4_Remove = document.querySelector(".button_Delete_Last");
 
+
+      // Buttons
+      const button_1_Remove = document.querySelector("#button_delete1");
+      const button_2_Remove = document.querySelector("#button_delete2");
+      const button_3_Remove = document.querySelector("#button_delete3");
+      const button_4_Remove = document.querySelector("#button_delete4");
+
+      button_1_Remove.addEventListener("click", () => {
+        getElement_1_Remove.remove();
+      })
+
+      button_2_Remove.addEventListener("click", () => {
+        getElement_2_Remove.remove();
+      })
+
+      button_3_Remove.addEventListener("click", () => {
+        getElement_3_Remove.remove();
+      })
+
+      button_4_Remove.addEventListener("click", () => {
+        getElement_4_Remove.remove();
+      })
+
+
+      
     </script>
 </body>
 </html>
