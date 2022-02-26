@@ -6,11 +6,15 @@ body {
     box-shadow: 5px 5px 15px 10px #ffffff;
 }
 
-/* .jumbutron.jumbotron-fluid.text-white.text-center{
+/* .jumbutron.jumbotron-fluid.text-white.text-center.fade{
     animation: fadein 3s;
 } */
-/*  
-@keyframes fadein {
+
+.jumbutron.jumbotron-fluid.text-white.text-center{
+    animation: fadeIn 3s;
+}
+  
+@keyframes fadeIn {
     0% {
     opacity:0;
     }
@@ -20,5 +24,4 @@ body {
     100% {
     opacity:1;
     }
-   }
-*/
+};
