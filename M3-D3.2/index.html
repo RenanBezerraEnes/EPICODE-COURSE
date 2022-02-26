@@ -255,38 +255,34 @@
 
                     <div class="input-group mt-2">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
-                          >Number</span
-                        >
+                        <span class="input-group-text">Number</span>
                       </div>
-                      <input type="text" class="form-control" id="newNumber"/>
+                      <input type="text" class="form-control" id="newNumber" />
                     </div>
 
                     <div class="input-group mt-2">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
-                          >Title</span
-                        >
+                        <span class="input-group-text">Title</span>
                       </div>
                       <input type="text" class="form-control" id="newTitle" />
                     </div>
 
                     <div class="input-group mt-2">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
-                          >Artist</span
-                        >
+                        <span class="input-group-text">Artist</span>
                       </div>
                       <input type="text" class="form-control" id="newArtist" />
                     </div>
 
                     <div class="input-group mt-2">
                       <div class="input-group-prepend">
-                        <span class="input-group-text"
-                          >Duration</span
-                        >
+                        <span class="input-group-text">Duration</span>
                       </div>
-                      <input type="text" class="form-control" id="newDuration"/>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="newDuration"
+                      />
                     </div>
                   </div>
                   <div class="modal-footer">
@@ -326,21 +322,17 @@
     ></script>
 
     <script>
-     
-
-      function deleteBt () {
+      function deleteBt() {
         const deleteBtns = document.querySelectorAll(".btn-delete");
         for (let i = 0; i < deleteBtns.length; i++) {
-        deleteBtns[i].addEventListener("click", () => {
-          deleteBtns[i].parentNode.parentNode.remove();
-        });
-      }
+          deleteBtns[i].addEventListener("click", () => {
+            deleteBtns[i].parentNode.parentNode.remove();
+          });
+        }
       }
       deleteBt();
-     
 
-      // ADD TRACK MODAL 
-
+      // ADD TRACK MODAL
 
       function createElements() {
         const num = document.querySelector("#newNumber").value;
@@ -348,8 +340,6 @@
         const artist = document.querySelector("#newArtist").value;
         const duration = document.querySelector("#newDuration").value;
         const tableBody = document.querySelector("#tbody-list");
-
-      
 
         const tableRow = document.createElement("tr");
         const th = document.createElement("th");
@@ -377,7 +367,7 @@
 
         const listButton = document.createElement("td");
 
-        listDeleteButton.className="btn btn-danger";
+        listDeleteButton.className = "btn btn-danger";
         listDeleteButton.innerHTML = "Delete";
 
         listButton.appendChild(listDeleteButton);
@@ -386,6 +376,14 @@
 
         tableBody.appendChild(tableRow);
       }
+
+        const jumbo = document.querySelector(
+        ".jumbutron.jumbotron-fluid.text-white.text-center"
+      );
+
+      window.onload = () => {
+        
+}
     </script>
   </body>
 </html>
