@@ -32,3 +32,23 @@ h5 {
     font-family: 'Open Sans', sans-serif;
     font-size: 1rem;
 }
+
+footer a {
+    color: #424242;
+    font-size: 0.85rem;
+}
+
+footer a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+footer svg {
+    color: #424242;
+}
+
+.btn-footer {
+    color: #424242;
+    border: 1px solid #424242;
+    font-size: 0.60rem;
+}
