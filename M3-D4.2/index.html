@@ -107,7 +107,7 @@
 
           <!-- Movies -->
           <h5 class="ml-2 mt-3">Trending Now</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
               <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/1.png" alt="movie 1" class="img-fluid w-100">
               </div>
@@ -134,7 +134,7 @@
           </div>
 
           <h5 class="ml-2 mt-5">Watch It Again</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
               <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/7.png" alt="movie 7" class="img-fluid w-100">
               </div>
@@ -161,7 +161,7 @@
           </div>
 
           <h5 class="ml-2 mt-5">New Releases</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
               <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/13.png" alt="movie 13" class="img-fluid w-100">
               </div>
@@ -295,9 +295,9 @@
 
       <script>
         window.onload = () => {
-          const movies = document.querySelectorAll(".row.row-cols-1.row-cols-sm-6.no-gutters");
+          const movies = document.querySelectorAll(".col.pr-1.mt-2.mt-md-0");
           for (let i = 0; i < movies.length; i++) {
-            movies[i].classList.add(".img-Animations");
+            movies[i].classList.add("img-Animations");
           }
         }
       
