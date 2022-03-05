@@ -21,6 +21,24 @@ nav a:hover {
     color: white;
 }
 
+aside {
+    width: 200px;
+}
+
+aside input {
+    border: none;
+    text-decoration: none;
+    background-color: #141414;
+}
+
+.remove {
+    display: none;
+}
+
+.expanded {
+    display: block;
+}
+
 .btn-genres {
     height: 20px;
     border: 1px solid white;

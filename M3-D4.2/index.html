@@ -52,7 +52,10 @@
           </ul>
 
           <div class="d-flex justify-content-center align-items-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" fill="white" class="bi bi-search mr-2" viewBox="0 0 16 16">
+            <aside class="remove">
+              <input type="search" id="query" name="test" placeholder="Search">
+          </aside>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="11" fill="white" class="bi bi-search mr-2" id="btn-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
               </svg>
             <a href="#" style="color: white;" class="mr-2">KIDS</a>
@@ -299,6 +302,18 @@
           for (let i = 0; i < movies.length; i++) {
             movies[i].classList.add("img-Animations");
           }
+
+          const aside = document.querySelector("aside");
+          const search = document.querySelector("#btn-search");
+          search.addEventListener("click", () => {
+            if (aside.className.endsWith("remove")) {
+              aside.classList.add("expanded");
+              aside.classList.remove("remove");
+            } else {
+              aside.classList.add("remove");
+              aside.classList.remove("expanded")
+            }
+          })
         }
       
       </script>
