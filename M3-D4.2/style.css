@@ -9,6 +9,7 @@ body {
     background-color: #141414;
     font-family: 'Roboto', sans-serif;
     color: white;
+    animation: fade-in 3s forwards;
 }
 
 nav a {
@@ -47,8 +48,65 @@ footer svg {
     color: #424242;
 }
 
+footer svg:hover {
+    color: white;
+    cursor: pointer;
+}
+
 .btn-footer {
     color: #424242;
     border: 1px solid #424242;
     font-size: 0.60rem;
+}
+
+.btn-footer:hover {
+    color: white;
+    font-size: 0.70rem;
+    
+}
+
+.img-Animations {
+    animation: time 1.5s forwards 6s;
+}
+
+.img-Animations:nth-of-type(1) {
+    animation-delay: 0.3s;
+}
+
+.img-Animations:nth-of-type(2) {
+    animation-delay: 0.5s;
+}
+.img-Animations:nth-of-type(3) {
+    animation-delay: 0.7s;
+}
+.img-Animations:nth-of-type(4) {
+    animation-delay: 0.10s;
+}
+.img-Animations:nth-of-type(5) {
+    animation-delay: 0.15s;
+}
+.img-Animations:nth-of-type(6) {
+    animation-delay: 0.20s;
+}
+
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes time {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
 }

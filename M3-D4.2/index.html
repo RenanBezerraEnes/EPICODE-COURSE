@@ -15,7 +15,6 @@
     <title>Netflix</title>
 </head>
 <body>
-    <!-- NavBar -->
      <!-- NavBar -->
      <nav class="navbar navbar-expand-lg">
         <img src="./assets/imgs/Netflix_Logo_RGB.png" alt="logo Netflix" height="38">
@@ -90,8 +89,8 @@
         </div>
       </nav>
 
+      <!-- Tv Shows and Button Genres -->
       <div class="container-fluid">
-          <!-- Tv Shows and Button Genres -->
           <div class="d-flex">
           <h4 class="ml-2 mr-2">TV Shows</h4>
           <div class="dropdown ml-2">
@@ -108,8 +107,8 @@
 
           <!-- Movies -->
           <h5 class="ml-2 mt-3">Trending Now</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
-              <div class="col pr-1">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
+              <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/1.png" alt="movie 1" class="img-fluid w-100">
               </div>
 
@@ -135,7 +134,7 @@
           </div>
 
           <h5 class="ml-2 mt-5">Watch It Again</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
               <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/7.png" alt="movie 7" class="img-fluid w-100">
               </div>
@@ -162,8 +161,8 @@
           </div>
 
           <h5 class="ml-2 mt-5">New Releases</h5>
-          <div class="row row-cols-1 row-cols-sm-6 no-gutters">
-              <div class="col pr-1">
+          <div class="row row-cols-1 row-cols-sm-6 no-gutters movies">
+              <div class="col pr-1 mt-2 mt-md-0">
                   <img src="./assets/imgs/movies/13.png" alt="movie 13" class="img-fluid w-100">
               </div>
 
@@ -292,5 +291,16 @@
         integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
         crossorigin="anonymous"
       ></script>
+
+
+      <script>
+        window.onload = () => {
+          const movies = document.querySelectorAll(".row.row-cols-1.row-cols-sm-6.no-gutters");
+          for (let i = 0; i < movies.length; i++) {
+            movies[i].classList.add(".img-Animations");
+          }
+        }
+      
+      </script>
 </body>
 </html>
