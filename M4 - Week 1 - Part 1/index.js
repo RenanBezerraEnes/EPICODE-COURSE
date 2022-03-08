@@ -157,6 +157,171 @@ console.log(notIncludes([5]));
 //11 Create a function to find the longest string from a given array of strings. Pass the array as parameter and return the longest string.
 console.log("Exercise 11")
 
-const longestString = () => {
+const countries = ["Germany", "Ireland", "Japan", "Brazil", "Spain", "Portugal"];
 
+const longestString = (arr) => {
+    let result = "";
+    for (let i = 0; i < arr.length; i++) {
+        const currentItem = arr[i];
+        if(currentItem.length > result.length) {
+            result = arr[i]
+        }
+    }
+    return result;
 }
+
+console.log(longestString(countries));
+
+
+//12 Create a function to find the types of a given angle:
+// Acute angle ⇒ between 0 and 90 degrees. Return acute.
+// Right angle ⇒ 90 degree. Return right
+// Obtuse angle ⇒ between 90 and 180. Return obtuse
+// Straight angle ⇒ 180 degrees. Return straight
+
+console.log("Exercise 12")
+// So in this exercise I have to use a parameter that will be the angle when I console.log
+
+const calcAngle = (angle) => {
+    if(angle < 90) {
+        return "Acute Angle"
+    }
+    else if (angle === 90) {
+        return "Right Angle"
+    }
+    else if (angle < 180) {
+        return "Obtuse Angle"
+    }
+    else if (angle > 180) {
+        return "Straight Angle"
+    }
+}
+
+console.log(calcAngle(50));
+console.log(calcAngle(90));
+console.log(calcAngle(179));
+console.log(calcAngle(195));
+
+
+//13 Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter
+console.log("Exercise 13")
+
+const integersE = [5,15]
+
+const greatestIndex = (x) => {
+ if(x[0] > x[1]){
+     return x[0]
+ } else if (x[1] > x[0]) {
+     return x[1]
+ }
+}
+
+console.log(greatestIndex(integersE));
+
+
+//14 Create a function to find and return the largest even number from an array of integers that is passed a parameter.
+console.log("Exercise 14")
+
+const largestEven = (numb) => {
+    let result = 0;
+    for (let i = 0; i < numb.length; i++) {
+        if(numb[i] % 2 === 0) {
+            result = numb[i]
+        }
+    }
+    return result
+}
+
+console.log(largestEven([2,4,6,8,10,12,14]));
+
+
+
+// 15 Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
+// Return true if that's the case, return false if it's not.
+
+console.log("Exercise 15")
+
+const checkIntegersNumbers = (x,y) => {
+    if(x > 0 && y < 0) {
+        return true
+    } else return false
+}
+
+console.log(checkIntegersNumbers(1,-1));
+console.log(checkIntegersNumbers(-1,5));
+
+
+// 16 Create a function to create and return a new string where the first 3 characters are in lower case and the others are in upper case.
+// If the string's length is less than 3, convert the whole string into uppercase. 
+// Pass the original string as a parameter.
+
+console.log("Exercise 16")
+
+const NewStrLowerAndUpper = (text) => {
+   if(text.length <= 3) {
+       return text.toUpperCase();
+   } else if (text.length > 3) {
+    let part1 = text.substring(0,3).toLowerCase();
+    let part2 = text.substring(3, text.length);
+    return part1 + part2
+   }
+}
+
+console.log(NewStrLowerAndUpper("BRAZIL"));
+console.log(NewStrLowerAndUpper("bra"));
+
+//17 Create a function to calculate the sum of two integers (passed as parameters).
+//  If the sum is in the 50-80 range, return 65, otherwise, return 80.
+
+
+console.log("Exercise 17")
+
+const sumIntegers = (a,b) => {
+    if(a + b > 50 && a + b < 80) {
+        return 65
+    } else return 80
+}
+
+console.log(sumIntegers(50,10));
+console.log(sumIntegers(30,10));
+
+
+// 18 Create a function to convert a number (passed as a parameter) into a string, basing yourself on this example: 
+// The number has 3 as a factor ⇒ return Diego 
+// The number has 5 as a factor ⇒ return Riccardo 
+// The number has 7 as a factor ⇒ return Stefano 
+// If the number does not have 3,5, or 7, return the original number. 
+// ⚠️ The factor is an integer which evenly divides a number without leaving a remainder. 
+// One number can have more than one factor, in that case you should return both names. 
+// Ex: 15 has both 3 and 5 has factors: the function will return DiegoRiccardo
+
+
+console.log("Exercise 18")
+
+const convert = (a,b,c) => {
+    if(a === 3) {
+        return "Diego"
+    } 
+    if (b === 5) {
+        return "Riccardo"
+    } 
+    else if (c === 7) {
+        return "Stefano"
+    }
+}
+
+console.log(convert(5));
+
+// Create a function that that takes a phrase as a parameter and returns its acronym. 
+// Ex. British Broadcasting Corporation returns BBC
+
+console.log("Exercise 19")
+
+const acronym = (phrase) => {
+    const b = phrase.map(function (text){
+        text.toUpperCase();
+    })
+    return b
+}
+
+console.log(acronym("ball"));
