@@ -298,30 +298,44 @@ console.log(sumIntegers(30,10));
 
 console.log("Exercise 18")
 
-const convert = (a,b,c) => {
-    if(a === 3) {
-        return "Diego"
+//3 is a factor of 15 because 15 / 3 = 5, a perfect integer
+// 4 is a factor of 24 because 20 / 4 = 6, a perfect integer
+
+const convert = (a) => {
+    let convertedString = '';
+
+    if(a % 3 === 0) {
+        convertedString = "Diego";
     } 
-    if (b === 5) {
-        return "Riccardo"
+    if (a % 5 === 0) {
+        convertedString += "Riccardo";
     } 
-    else if (c === 7) {
-        return "Stefano"
+    else if (a % 7 === 0) {
+        convertedString += "Stefano";
     }
+    return convertedString
 }
 
-console.log(convert(5));
+console.log(convert(25));
+console.log(convert(49));
+console.log(convert(15));
 
-// Create a function that that takes a phrase as a parameter and returns its acronym. 
+//19 Create a function that that takes a phrase as a parameter and returns its acronym. 
 // Ex. British Broadcasting Corporation returns BBC
-
+// In this case I need have a variable with a empty string, I also need split the (paratamer = string),
+// Then because I split this string I need to loop it and add it to the empty String.
 console.log("Exercise 19")
 
 const acronym = (phrase) => {
-    const b = phrase.map(function (text){
-        text.toUpperCase();
-    })
-    return b
+  //  let acronym = [];
+    let acronym = ''
+    let str = phrase.split(" ");
+   for (let i = 0; i < str.length; i++) {
+   // acronym.push(str[i][0].toUpperCase());
+    acronym += str[i][0].toUpperCase()
+   }
+   return acronym//.join('');
 }
 
-console.log(acronym("ball"));
+console.log(acronym("British Broadcasting Corporation"));
+
