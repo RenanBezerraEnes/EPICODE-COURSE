@@ -1,0 +1,231 @@
+body {
+  background: rgb(46, 63, 87);
+  background: linear-gradient(
+    90deg,
+    rgb(63, 86, 119) 0%,
+    rgba(33, 44, 61, 1) 42%,
+    rgb(15, 21, 29) 100%
+  );
+}
+
+/*SIDEBAR SECTION*/
+.navbar.fixed-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 230px;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  background-color: black;
+  z-index: 1200;
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav a {
+  color: rgb(145, 145, 145) !important;
+  transition: 0.3s;
+}
+
+.navbar.fixed-left .navbar-collapse .navbar-nav a:hover {
+  color: white !important;
+}
+
+.navbar.fixed-left .navbar-brand {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 3px;
+}
+
+.nav-btn {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.nav-btn a {
+  color: rgb(145, 145, 145);
+}
+
+.signup-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.signup-btn:hover {
+  color: white;
+  background-color: rgb(60, 211, 60);
+  border: 1px solid rgb(60, 211, 60);
+}
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.login-btn:hover {
+  color: black;
+  background-color: white;
+}
+
+@media screen and (max-width: 936px) {
+  #sidebar {
+    display: none;
+  }
+}
+
+/* BOTTOM PLAYER SECTION*/
+
+.bg-container {
+  height: 5.5rem;
+  background-color: #282828;
+}
+
+.playerControls .row {
+  justify-content: space-between;
+}
+
+.playerControls a img {
+  width: 14px;
+  margin-top: 1rem;
+  filter: brightness(60%);
+}
+
+.playerControls a:hover {
+  filter: brightness(80%);
+  color: #282828 !important;
+}
+
+.progress {
+  color: white;
+  background-color: #414141;
+  height: 3px;
+}
+
+.playBar p {
+  margin-bottom: 20px;
+  color: white;
+}
+
+/*MAIN PAGE SECTION*/
+
+.mainLinks {
+  margin-top: 1.5rem;
+  justify-content: space-evenly;
+}
+
+.mainLinks a {
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  opacity: 0.3;
+}
+
+.mainLinks a:hover {
+  text-decoration: none;
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.imgLinks a p,
+.mainPage p a {
+  padding-top: 8px;
+  font-size: 12px;
+  color: white;
+  font-weight: 700;
+}
+
+.mainPage p a:hover {
+  color: rgb(138, 138, 138);
+}
+
+.imgLinks a:hover {
+  text-decoration: none;
+}
+
+.imgLinks a img:hover {
+  filter: brightness(50%);
+}
+
+#eminem,
+#metallica,
+#queen,
+#searchResults,
+#artist-tracks {
+  color: white;
+  font-weight: 700;
+  padding-top: 50px;
+}
+
+.trackHover:hover {
+  background-color: black;
+  cursor: pointer;
+}
+
+.trackHover a {
+  text-decoration: none;
+}
+
+#btnPlay {
+  font-weight: 700;
+  width: 150px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.duration {
+  float: right;
+}
+
+.mainButton {
+  border: 1px solid #fff !important;
+  border-radius: 20px !important;
+  height: 2.2em !important;
+  width: 7em;
+  text-align: center;
+  padding: 0px 10px !important;
+}
+
+.titleMain {
+  color: white;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#hipHopSection {
+  margin-bottom: 7rem;
+}
+
+#followers {
+  color: white;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.album-title {
+  color: white;
+  font-weight: bold;
+  font-size: x-large;
+  margin-bottom: 0;
+}
+
+.artist-name {
+  color: white;
+}
+
+.mainPage img {
+  width: 200px;
+}
