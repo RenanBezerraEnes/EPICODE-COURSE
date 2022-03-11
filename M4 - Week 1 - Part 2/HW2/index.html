@@ -118,7 +118,9 @@
           <div class="col-10 d-flex">
             <div id="found" class="">
               <h2>Search results</h2>
-              <button type="button" class="btn btn-primary" id="btn-albums-title">Add Album</button>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" id="btn-albums-title">
+                Album List
+              </button>
               <button type="button" class="btn btn-primary" id="btn-albums-calc">Calc Albums</button>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="searchSection">
               </div>
@@ -168,6 +170,30 @@
   </div>
   <!--END NAVBAR BOTTOM-->
 
+  <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Album List</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="modalAlbumList">
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
   </script>
@@ -179,6 +205,8 @@
   </script>
 
   <script>
+    let allAlbums = []
+
     const loadEminemSongs = () => {
       console.log("____HERE")
        fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
@@ -205,6 +233,12 @@
           </div>
           `
           
+          for (let i = 0; i < dataEminem.data.length; i++) {
+            if(!allAlbums.map(a => a.id).includes(dataEminem.data[i].album.id)) {
+              allAlbums.push(dataEminem.data[i].album)
+            }
+          }
+
           eminem.appendChild(colEminem);
         }
 
@@ -238,6 +272,12 @@
           </div>
           </div>
           `
+
+          for (let i = 0; i < dataMetallica.data.length; i++) {
+            if(!allAlbums.map(a => a.id).includes(dataMetallica.data[i].album.id)) {
+              allAlbums.push(dataMetallica.data[i].album)
+            }
+          }
           
           metallica.appendChild(colMetallica);
         }
@@ -273,7 +313,15 @@
           </div>
           </div>
           `
+
+         // if (allAlbums does not include any album which id === dataQueen.data[i].album.id) then push it
           
+          for (let i = 0; i < dataQueen.data.length; i++) {
+            if(!allAlbums.map(a => a.id).includes(dataQueen.data[i].album.id)) {
+              allAlbums.push(dataQueen.data[i].album)
+            }
+          }
+
           queen.appendChild(colQueen);
         }
 
@@ -285,28 +333,24 @@
 
     const buttonAlbums = () => {
       const btn = document.querySelector("#btn-albums-title");
-
       btn.addEventListener("click", () => {
-      const titles = document.querySelectorAll(".card-title");
-      const search = document.querySelector("#searchSection");
-        for (let i = 0; i < titles.length; i++) {
-          const titlesSongs = titles[i];
+      const modalAlbum = document.querySelector("#modalAlbumList");
+     
+        for (let i = 0; i < allAlbums.length; i++) {
+          const album = allAlbums[i];
 
           const titlesDiv = document.createElement("div");
-          titlesDiv.classList.add("col");
 
           titlesDiv.innerHTML = `
-          <div class="modal-dialog modal-lg">
             <ul class="list-group list-group-flush">
-            <li class="list-group-item">${titlesSongs}</li> 
+            <li class="list-group-item">${album.title}</li> 
             </ul>
-          </div
           `
 
-          search.appendChild(titlesDiv);
+          modalAlbum.appendChild(titlesDiv);
         }
       })
-    }
+  }
     
 
     const countAlbums = () => {
@@ -318,9 +362,9 @@
     }
     
     window.onload = () => {
-      loadEminemSongs();
+     loadEminemSongs();
 
-      loadMetallicaSongs();
+     loadMetallicaSongs();
 
       loadQueenSongs();
 
