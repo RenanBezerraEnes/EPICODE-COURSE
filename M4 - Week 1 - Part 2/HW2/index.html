@@ -193,6 +193,7 @@
 
           const colEminem = document.createElement("div");
           colEminem.classList.add("col");
+          colEminem.classList.add("p-1")
 
           colEminem.innerHTML = `
           <div class="card" style="height: 100%; background-color:#10171F">
@@ -226,6 +227,7 @@
 
           const colMetallica = document.createElement("div");
           colMetallica.classList.add("col");
+          colMetallica.classList.add("p-1");
 
           colMetallica.innerHTML = `
           <div class="card" style="height: 100%; background-color:#10171F">
@@ -260,6 +262,7 @@
 
           const colQueen = document.createElement("div");
           colQueen.classList.add("col");
+          colQueen.classList.add("p-1");
 
           colQueen.innerHTML = `
           <div class="card" style="height: 100%; background-color:#10171F">
@@ -279,11 +282,12 @@
 
     }    
     
+
     const buttonAlbums = () => {
       const btn = document.querySelector("#btn-albums-title");
 
       btn.addEventListener("click", () => {
-        const titles = document.querySelectorAll(".card-title");
+      const titles = document.querySelectorAll(".card-title");
       const search = document.querySelector("#searchSection");
         for (let i = 0; i < titles.length; i++) {
           const titlesSongs = titles[i];
@@ -312,6 +316,7 @@
         console.log(document.querySelectorAll(".card").length);
       })
     }
+    
     window.onload = () => {
       loadEminemSongs();
 
