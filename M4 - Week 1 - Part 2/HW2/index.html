@@ -89,7 +89,7 @@
         </div>
         <div class="row">
           <div class="col-10">
-            <div id="eminem" class="d-none">
+            <div id="eminem" class="">
               <h2>Eminem</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="eminemSection">
               </div>
@@ -98,7 +98,7 @@
         </div>
         <div class="row">
           <div class="col-10">
-            <div id="metallica" class="d-none">
+            <div id="metallica" class="">
               <h2>Metallica</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="metallicaSection">
               </div>
@@ -107,7 +107,7 @@
         </div>
         <div class="row">
           <div class="col-10">
-            <div id="queen" class="d-none">
+            <div id="queen" class="">
               <h2>Queen</h2>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="queenSection">
               </div>
@@ -115,9 +115,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-10">
-            <div id="found" class="d-none">
+          <div class="col-10 d-flex">
+            <div id="found" class="">
               <h2>Search results</h2>
+              <button type="button" class="btn btn-primary" id="btn-albums-title">Add Album</button>
+              <button type="button" class="btn btn-primary" id="btn-albums-calc">Calc Albums</button>
               <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 imgLinks py-3" id="searchSection">
               </div>
             </div>
@@ -177,6 +179,150 @@
   </script>
 
   <script>
+    const loadEminemSongs = () => {
+      console.log("____HERE")
+       fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=eminem")
+       .then(responseEminem => responseEminem.json())
+       .then(dataEminem => {
+        console.log(dataEminem)
+        // DOM MANIPULATION
+        const eminem = document.querySelector("#eminemSection");
+
+        for (let i = 0; i < dataEminem.data.length; i++) {
+          const eminemList = dataEminem.data[i]
+
+          const colEminem = document.createElement("div");
+          colEminem.classList.add("col");
+
+          colEminem.innerHTML = `
+          <div class="card" style="height: 100%; background-color:#10171F">
+          <img src="${eminemList.album.cover}" class="card-img-top img-fluid w-100" alt="...">
+          <div class="card-body" style="height: 100%">
+          <h5 class="card-title">${eminemList.title}</h5>
+          <p class="card-text">${eminemList.title_short}</p>
+          </div>
+          </div>
+          `
+          
+          eminem.appendChild(colEminem);
+        }
+
+       })
+       .catch(err => alert(err))
+    }
+
+
+    const loadMetallicaSongs = () => {
+      fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=metallica")
+      .then(responseMetallica => responseMetallica.json())
+      .then(dataMetallica => {
+        console.log(dataMetallica)
+        // DOM MANIPULATION
+        const metallica = document.querySelector("#metallicaSection")
+
+        for (let i = 0; i < dataMetallica.data.length; i++) {
+          const metallicaList = dataMetallica.data[i]
+          
+
+          const colMetallica = document.createElement("div");
+          colMetallica.classList.add("col");
+
+          colMetallica.innerHTML = `
+          <div class="card" style="height: 100%; background-color:#10171F">
+          <img src="${metallicaList.album.cover}" class="card-img-top img-fluid w-100" alt="...">
+          <div class="card-body" style="height: 100%">
+          <h5 class="card-title">${metallicaList.title}</h5>
+          <p class="card-text">${metallicaList.title_short}</p>
+          </div>
+          </div>
+          `
+          
+          metallica.appendChild(colMetallica);
+        }
+
+      })
+      .catch(err => alert(err))
+
+    }
+
+
+    const loadQueenSongs = () => {
+      fetch("https://striveschool-api.herokuapp.com/api/deezer/search?q=queen")
+      .then(responseQueen => responseQueen.json())
+      .then(dataQueen => {
+        console.log(dataQueen)
+        // DOM MANIPULATION
+        const queen = document.querySelector("#queenSection")
+
+        for (let i = 0; i < dataQueen.data.length; i++) {
+          const queenList = dataQueen.data[i]
+          
+
+          const colQueen = document.createElement("div");
+          colQueen.classList.add("col");
+
+          colQueen.innerHTML = `
+          <div class="card" style="height: 100%; background-color:#10171F">
+          <img src="${queenList.album.cover}" class="card-img-top img-fluid w-100" alt="...">
+          <div class="card-body" style="height: 100%">
+          <h5 class="card-title">${queenList.title}</h5>
+          <p class="card-text">${queenList.title_short}</p>
+          </div>
+          </div>
+          `
+          
+          queen.appendChild(colQueen);
+        }
+
+      })
+      .catch(err => alert(err))
+
+    }    
+    
+    const buttonAlbums = () => {
+      const btn = document.querySelector("#btn-albums-title");
+
+      btn.addEventListener("click", () => {
+        const titles = document.querySelectorAll(".card-title");
+      const search = document.querySelector("#searchSection");
+        for (let i = 0; i < titles.length; i++) {
+          const titlesSongs = titles[i];
+
+          const titlesDiv = document.createElement("div");
+          titlesDiv.classList.add("col");
+
+          titlesDiv.innerHTML = `
+          <div class="modal-dialog modal-lg">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">${titlesSongs}</li> 
+            </ul>
+          </div
+          `
+
+          search.appendChild(titlesDiv);
+        }
+      })
+    }
+    
+
+    const countAlbums = () => {
+      const btnCalc = document.querySelector("#btn-albums-calc");
+
+      btnCalc.addEventListener("click", () => {
+        console.log(document.querySelectorAll(".card").length);
+      })
+    }
+    window.onload = () => {
+      loadEminemSongs();
+
+      loadMetallicaSongs();
+
+      loadQueenSongs();
+
+      buttonAlbums();
+
+      countAlbums();
+    }
   </script>
 </body>
 
