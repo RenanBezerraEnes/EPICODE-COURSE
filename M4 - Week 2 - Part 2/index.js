@@ -13,19 +13,19 @@ const loadBooks = () => {
       containerDiv.innerHTML = booksData
         .map(
           (books) => `
-    <div class="col-md-4" id="${books.asin}">
-    <div class="card mb-4 shadow-sm">
-    <div class="card" style="height: 100%">
+    <div class="col-md-4 pb-5" id="${books.asin}">
+    <div class="card mb-4 shadow-sm h-100">
+    <div class="card h-100">
         <img src="${
           books.img
-        }" class="img-fluid img-thumbnail" alt="..." style="height: 100%">
-        <div class="card-body" style="height: 100%">
-        <h5 class="card-title">${books.title}</h5>
+        }" class="img-fluid" alt="...">
+        <div class="card-body">
+        <h5 class="card-title text-truncate">${books.title}</h5>
         <p><scan>&#8364</scan>${books.price}</p> 
         <button onclick="addToCart('${books.asin}')" class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;" data-toggle="modal" data-target="#exampleModal">Add Cart</button>
         <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
       </div>
-    <div class="card-footer" style="height: 100%">
+    <div class="card-footer">
       <small class="text-muted">Category: ${books.category.toUpperCase()}</small>
     </div>
   </div>
@@ -58,18 +58,18 @@ const displayCart = () => {
 
   cartList.innerHTML = cart.map((cart) =>`
   <div class="col-md-4" style="color: black;">
-  <div class="card mb-4 shadow-sm">
-  <div class="card" style="height: 100%">
+  <div class="card mb-4 shadow-sm h-100">
+  <div class="card h-100">
       <img src="${
         cart.img
-      }" class="img-fluid img-thumbnail" alt="..." style="height: 100%">
-      <div class="card-body" style="height: 100%">
+      }" class="img-fluid img-thumbnail" alt="...">
+      <div class="card-body">
       <h5 class="card-title">${cart.title}</h5>
       <p><scan>&#8364</scan>${cart.price}</p> 
       <button class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;">Add Cart</button>
       <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
     </div>
-  <div class="card-footer" style="height: 100%">
+  <div class="card-footer">
     <small class="text-muted">Category: ${cart.category}</small>
   </div>
 </div>
@@ -85,9 +85,9 @@ const deleteBtn = () => {
   const deleteBtn = document.querySelector("#deleteBtn")
 
   deleteBtn.addEventListener("click", () => {
-    cart.map((cart) => {
-      cart.remove()
-    })
+      cart.for((carts) => {
+        console.log(carts)
+      })
   })
 }
 
@@ -105,19 +105,19 @@ const inputSearch = (bookValue) => {
         )
         .map(
           (books) => `
-    <div class="col-md-4">
-    <div class="card mb-4 shadow-sm">
-    <div class="card" style="height: 100%">
+    <div class="col-md-4 mb-3 mr-3 ml-3">
+    <div class="card mb-4 shadow-sm h-100">
+    <div class="card h-100">
         <img src="${
           books.img
-        }" class="img-fluid img-thumbnail" alt="..." style="height: 100%">
-        <div class="card-body" style="height: 100%">
+        }" class="img-fluid img-thumbnail" alt="cardImg">
+        <div class="card-body">
         <h5 class="card-title">${books.title}</h5>
         <p>$${books.price}</p> 
         <button class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;">Add Cart</button>
         <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
       </div>
-    <div class="card-footer" style="height: 100%">
+    <div class="card-footer">
       <small class="text-muted">Category: ${books.category.toUpperCase()}</small>
     </div>
   </div>
