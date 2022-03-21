@@ -22,7 +22,7 @@ const loadBooks = () => {
         <div class="card-body" style="height: 100%">
         <h5 class="card-title">${books.title}</h5>
         <p><scan>&#8364</scan>${books.price}</p> 
-        <button onclick="addToCart('${books.asin}')" class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;">Add Cart</button>
+        <button onclick="addToCart('${books.asin}')" class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;" data-toggle="modal" data-target="#exampleModal">Add Cart</button>
         <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
       </div>
     <div class="card-footer" style="height: 100%">
@@ -46,17 +46,50 @@ const loadBooks = () => {
     .catch((error) => console.log(error));
 };
 
-function addToCart(asin){
+const addToCart = (asin) => {
   
   const bookToAdd = books.find(book => book.asin === asin)
   cart.push(bookToAdd)
-
-  const card = document.getElementById(asin)
-  
-  console.log(cart)
-
+  displayCart()
 }
 
+const displayCart = () => {
+  const cartList = document.querySelector("#booksList")
+
+  cartList.innerHTML = cart.map((cart) =>`
+  <div class="col-md-4" style="color: black;">
+  <div class="card mb-4 shadow-sm">
+  <div class="card" style="height: 100%">
+      <img src="${
+        cart.img
+      }" class="img-fluid img-thumbnail" alt="..." style="height: 100%">
+      <div class="card-body" style="height: 100%">
+      <h5 class="card-title">${cart.title}</h5>
+      <p><scan>&#8364</scan>${cart.price}</p> 
+      <button class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;">Add Cart</button>
+      <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
+    </div>
+  <div class="card-footer" style="height: 100%">
+    <small class="text-muted">Category: ${cart.category}</small>
+  </div>
+</div>
+</div>
+</div>
+  `
+  ).join(" ")
+}
+// ************************************************** DELETE ITEMS IN THE MODAL CART ****************************************
+
+const deleteBtn = () => {
+
+  const deleteBtn = document.querySelector("#deleteBtn")
+
+  deleteBtn.addEventListener("click", () => {
+    cart.map((cart) => {
+      cart.remove()
+    })
+  })
+}
 
 // ************************************************** INPUT SEARCH **********************************************************
 const inputSearch = (bookValue) => {
