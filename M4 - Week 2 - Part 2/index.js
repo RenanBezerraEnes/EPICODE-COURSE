@@ -51,6 +51,16 @@ const addToCart = (asin) => {
   const bookToAdd = books.find(book => book.asin === asin)
   cart.push(bookToAdd)
   displayCart()
+  totalPrice()
+
+}
+
+const totalPrice = () => {
+ const price = document.querySelector(".totalPrice")
+
+ price.innerText = cart.reduce((total, item) => {
+   return total + item.price
+ },0)
 }
 
 const displayCart = () => {
