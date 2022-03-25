@@ -9,8 +9,59 @@
     <title>Hello, world!</title>
   </head>
   <body>
+    <div class="text-center pt-5 listNames">
+    <button class="btn btn-secondary" id="btnDisplayNames">Display Names</button>
+    </div>
+
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">Options</label>
+      </div>
+      <select class="custom-select" id="inputGroupSelect01">
+        <option selected>Choose...</option>
+        <option value="name">Name</option>
+        <option value="username">UserName</option>
+        <option value="email">Email</option>
+      </select>
+    </div>
+
+    <div class="d-flex justify-content-center mb-3">
+    <input type="text" onkeyup="search()" placeholder="search">
+  </div>
     <div class="container">
-        
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Username</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody id="tableUs">
+          
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Street</th>
+            <th scope="col">Suite</th>
+            <th scope="col">City</th>
+            <th scope="col">Zipcode</th>
+            <th scope="col">Lat</th>
+            <th scope="col">Lng</th>
+          </tr>
+        </thead>
+        <tbody id="addressList">
+          
+        </tbody>
+      </table>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
