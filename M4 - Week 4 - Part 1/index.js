@@ -1,6 +1,6 @@
 const getData = async () => {
     try {
-        const myProducts = fetch("https://striveschool-api.herokuapp.com/api/product/", {
+        const myProducts = await fetch("https://striveschool-api.herokuapp.com/api/product/", {
             headers: {
             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NDg1MDAxNDksImV4cCI6MTY0OTcwOTc0OX0.04_ArG8vkOKBaC7uqVG554vt1Xm8JTqqw0vSCBx2QnU"
         }
@@ -14,7 +14,7 @@ const getData = async () => {
             console.log("Something went wrong")
         }
     } catch (error) {
-        alert(error)
+        console.log(error)
     }
 }
 
@@ -27,6 +27,7 @@ const createProducts = (products) => {
     <div class="card-body">
       <h5 class="card-title">${products.brand}</h5>
       <p class="card-text">${products.name}</p>
+      <p class="card-text">${products.description}</p>
       <p class="card-text">${products.price}</p>
     </div>
   </div>
@@ -35,6 +36,6 @@ const createProducts = (products) => {
 
 window.onload = async () => {
    let products = await getData()
-   console.log("I have been read", products)
+   console.log("done", products)
    createProducts(products)
 }

@@ -13,10 +13,10 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="./backoffice.html">BackOffice</a>
           </li>
         </ul>
@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row justify-content-center mt-4">
         <div class="col col-md-6">
-          <form onsubmit="createNewEvent(event)">
+          <form onsubmit="getNewProducts(event)">
             <div class="form-group">
               <label for="name-input">Name</label>
               <input
@@ -48,7 +48,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="description-input">Brand</label>
+              <label for="brand-input">Brand</label>
               <input
                 type="text"
                 class="form-control"
@@ -57,7 +57,7 @@
               />
             </div>
             <div class="form-group">
-              <label for="description-input">Image-Url</label>
+              <label for="image-input">Image-Url</label>
               <input
                 type="url"
                 class="form-control"
