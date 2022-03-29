@@ -55,6 +55,8 @@ const addToCart = (asin) => {
 
 }
 
+
+// ************************************************** TOTAL PRICE ********************************************************
 const totalPrice = () => {
  const price = document.querySelector(".totalPrice")
 
@@ -62,7 +64,7 @@ const totalPrice = () => {
    return total + item.price
  },0)
 }
-
+// **************************************************** DISPLAY CART *****************************************************
 const displayCart = () => {
   const cartList = document.querySelector("#booksList")
 
@@ -78,6 +80,7 @@ const displayCart = () => {
       <p><scan>&#8364</scan>${cart.price}</p> 
       <button class="btn btn-primary border-0 btn-add" style="background-color: #0D101A; border-radius: 50px;">Add Cart</button>
       <button class="btn btn-primary border-0 btn-skip" style="background-color: #0D101A; border-radius: 50px;">Skip</button>
+      <button class="btn btn-primary border-0 btn-delete" style="background-color: #0D101A; border-radius: 50px;">Delete</button>
     </div>
   <div class="card-footer">
     <small class="text-muted">Category: ${cart.category}</small>
@@ -90,16 +93,27 @@ const displayCart = () => {
 }
 // ************************************************** DELETE ITEMS IN THE MODAL CART ****************************************
 
-const deleteBtn = () => {
-
-  const deleteBtn = document.querySelector("#deleteBtn")
+const deleteItemsModal = () => {
+  const deleteBtn = document.querySelector(".btn-delete")
 
   deleteBtn.addEventListener("click", () => {
-      cart.for((carts) => {
-        console.log(carts)
-      })
+    cart.forEach((cart) => {
+      cart.remove()
+    })
   })
 }
+
+
+// const deleteBtn = () => {
+
+//   const deleteBtn = document.querySelector("#deleteBtn")
+
+//   deleteBtn.addEventListener("click", () => {
+//       cart.forEach((carts) => {
+//         console.log(carts)
+//       })
+//   })
+// }
 
 // ************************************************** INPUT SEARCH **********************************************************
 const inputSearch = (bookValue) => {
