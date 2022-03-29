@@ -28,8 +28,8 @@ const fetchUsers = async () => {
  return dataUsers
 };
 
-const search = () => {
-  addUserList( filterUsers())
+const search = async() => {
+  addUserList(await filterUsers())
 }
 
 const filterUsers = async () => {
@@ -37,6 +37,7 @@ let inputSearch = document.querySelector("input").value
 let dropdownSearch = document.querySelector("#inputGroupSelect01").value
 
 let usersArray = await fetchUsers()
+
 
   if (inputSearch && dropdownSearch === "name") {
     return usersArray.filter((user) => user.name.includes(inputSearch))
@@ -53,7 +54,6 @@ let usersArray = await fetchUsers()
 }
 
 const addUserList = (usersArray) => {
-  console.log(usersArray)
   // const container = document.querySelector(".container");
 
   const usersTable = document.querySelector("#tableUs")
