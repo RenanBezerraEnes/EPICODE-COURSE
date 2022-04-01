@@ -22,14 +22,16 @@ const createProducts = (products) => {
     const container = document.querySelector(".container")
 
     container.innerHTML = products.map((products) => `
-    <div class="card">
-    <img src="${products.imageUrl}" class="card-img-top" alt="...">
+    <div class="card mt-5">
+    <a href="./backoffice.html?eventId=${products._id}">
+    <img src="${products.imageUrl}" class="img-fluid text-center" alt="..." style="width: 100px"
     <div class="card-body">
       <h5 class="card-title">${products.brand}</h5>
       <p class="card-text">${products.name}</p>
       <p class="card-text">${products.description}</p>
       <p class="card-text">${products.price}</p>
     </div>
+    </a>
   </div>
     `).join(" ")
 }
