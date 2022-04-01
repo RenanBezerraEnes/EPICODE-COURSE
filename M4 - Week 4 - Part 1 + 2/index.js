@@ -21,17 +21,18 @@ const getData = async () => {
 const createProducts = (products) => {
     const container = document.querySelector(".container")
 
-    container.innerHTML = products.map((products) => `
+    container.innerHTML = products.map((product) => `
     <div class="card mt-5">
-    <a href="./backoffice.html?eventId=${products._id}">
-    <img src="${products.imageUrl}" class="img-fluid text-center" alt="..." style="width: 100px"
+    <a href="./backoffice.html?eventId=${product._id}">
+    <img src="${product.imageUrl}" class="img-fluid text-center" alt="..." style="width: 100px"  </a>
     <div class="card-body">
-      <h5 class="card-title">${products.brand}</h5>
-      <p class="card-text">${products.name}</p>
-      <p class="card-text">${products.description}</p>
-      <p class="card-text">${products.price}</p>
+      <h5 class="card-title">${product.brand}</h5>
+      <p class="card-text">${product.name}</p>
+      <p class="card-text">${product.description}</p>
+      <p class="card-text">${product.price}</p>
+     <a href="./details.html?eventId=${product._id}" > <button class="btn btn-primary" id="detailsButton">Details</button><a/>
     </div>
-    </a>
+  
   </div>
     `).join(" ")
 }

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+
+    <title>E-COMMERCE DETAILS ITEM</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="./index.html"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./backoffice.html">BackOffice</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Details</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <h2 class="text-center mt-4">E-COMMERCE DETAILS</h2>
+    <div class="container">
+
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      const eventId = new URLSearchParams(window.location.search).get(
+        "eventId"
+      );
+
+      const container = document.querySelector(".container")
+
+      const detailsPage = async () => {
+        try {
+            
+            let detailsId = await fetch ('https://striveschool-api.herokuapp.com/api/product/' + eventId, 
+            {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NDg1MDAxNDksImV4cCI6MTY0OTcwOTc0OX0.04_ArG8vkOKBaC7uqVG554vt1Xm8JTqqw0vSCBx2QnU",
+          "Content-type": "application/json",
+        },
+      }
+    )
+
+    if(detailsId.ok) {
+        let detailsForDisplay = await detailsId.json()
+        console.log(detailsForDisplay)
+
+        container.innerHTML = `
+        <div class="card mt-5">
+        <img src="${detailsForDisplay.imageUrl}" class="img-fluid text-center" alt="..." style="width: 100px"
+        <div class="card-body">
+        <h5 class="card-title">${detailsForDisplay.brand}</h5>
+        <p class="card-text">${detailsForDisplay.name}</p>
+        <p class="card-text">${detailsForDisplay.description}</p>
+        <p class="card-text">${detailsForDisplay.price}</p>
+        </div>
+        </div>
+    `
+    } else {
+        alert("SOMETHING WENT WRONG")
+    }
+
+    } catch (error) {
+        console.log(error)
+    }
+    } 
+
+
+      window.onload = () => {
+        console.log(eventId);
+
+
+        if (eventId) {
+          detailsPage()
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -49,16 +49,25 @@ const fetchDetails = async () => {
   spinnerToggle()
   try {
     let idFetch = await fetch(
-      'https://striveschool-api.herokuapp.com/api/agenda/' + eventId,
+      'https://striveschool-api.herokuapp.com/api/product/' + eventId,
+      {
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NDg1MDAxNDksImV4cCI6MTY0OTcwOTc0OX0.04_ArG8vkOKBaC7uqVG554vt1Xm8JTqqw0vSCBx2QnU",
+          "Content-type": "application/json",
+        },
+      }
+      
     )
     console.log(idFetch)
 
     if (idFetch.ok) {
       let fetchDetails = await idFetch.json()
+      console.log(fetchDetails)
 
       document.querySelector("#name-input").value = fetchDetails.name
       document.querySelector("#description-input").value = fetchDetails.description
-      document.querySelector("#brand-inpu").value = fetchDetails.brand
+      document.querySelector("#brand-input").value = fetchDetails.brand
       document.querySelector("#image-input").value = fetchDetails.imageUrl
       document.querySelector("#price-input").value = fetchDetails.price
 
@@ -78,10 +87,16 @@ const fetchDetails = async () => {
 const deleteButton = async () => {
   try {
     let responseData = await fetch(
-      "https://striveschool-api.herokuapp.com/api/agenda/" + eventId,
+      "https://striveschool-api.herokuapp.com/api/product/" + eventId,
       {
         method: "DELETE",
+        headers: {
+          Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NDg1MDAxNDksImV4cCI6MTY0OTcwOTc0OX0.04_ArG8vkOKBaC7uqVG554vt1Xm8JTqqw0vSCBx2QnU",
+          "Content-type": "application/json",
+        },
       }
+      
     );
 
     if (responseData.ok) {
