@@ -14,7 +14,9 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-image: url(https://global-uploads.webflow.com/61a98989a418f6f2acefef70/61ddecf2ff89602dd33bf5d9_samsung_837X_StoreDecentraland.jpg);
+  background-repeat: round;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -35,4 +37,18 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.navbar{
+  background-color: #1d1e1e;
+  color: aliceblue;
+}
+
+.navbar a {
+  color: aliceblue;
+}
+
+.navbar a:hover {
+  color: rgb(200, 200, 200)!important;
+  cursor: pointer;
 }

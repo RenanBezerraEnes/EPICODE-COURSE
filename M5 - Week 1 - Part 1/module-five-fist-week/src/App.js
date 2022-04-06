@@ -1,8 +1,9 @@
-import logo from './logo.svg';
+
 import './App.css';
-import ClassComponent from './ClassComponent';
-import FunctionalComponent from './FunctionalComponent';
+import NavbarClass from './NavbarClass';
 import AnotherComponent from './AnotherComponent';
+import SearchBar from './SearchBar';
+import Footer from './Footer';
 
 function App() {
 
@@ -10,24 +11,20 @@ function App() {
 
   return (
     <div className="App">
-      <ClassComponent classTitle="Welcome to my first react app"/>
+      <NavbarClass/>
       <header className="App-header">
-        <AnotherComponent title="Top Section!" subTitle="Welcome" />
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-           From {name}
-        </p>
-        <AnotherComponent title="Bottom Section!" subTitle="GoodBye"/>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <AnotherComponent title="WELCOME TO THE NFT MARKET" />
+        <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lNyuIbqCaBRJKopI7D9r67HVJ2B9h7uQK1O73DlZnMiNvgq6oRB5Zj_U9Y5-6pbfY80&usqp=CAU' 
+        className="App-logo rounded-circle mt-3" 
+        style={{height:"80px"}}
+        alt="logo" 
+        />
+      <br></br>
+      <SearchBar/>
+        
       </header>
-      <FunctionalComponent />
+      
+      <Footer />
     </div>
   );
 }
