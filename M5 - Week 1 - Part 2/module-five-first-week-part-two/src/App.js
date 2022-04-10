@@ -10,7 +10,7 @@ function App() {
   return (
     <div>
       <MyNav />
-      <Welcome />
+      <Welcome subtitle="Welcome to the JBL BOOK Store" bookSection="History Book Section"/>
       <LatestRelease />
       <Footer />
     </div>
