@@ -14,7 +14,7 @@ class BookList extends Component {
       <Container>
         <FormControl
           placeholder="Search"
-          value={this.state.value}
+          value={this.state.search}
           onChange={(e) => {
               this.setState({ search: e.currentTarget.value.toLowerCase() })
           }}
