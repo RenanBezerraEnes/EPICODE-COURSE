@@ -15,7 +15,7 @@ class AddComment extends Component {
         return (
             <Form style={{width: "50%"}} className="text-center ml-auto mr-auto" onSubmit={this.onFeedBack}>
                 <Form.Group>
-                    <Form.Label>rate</Form.Label>
+                    <Form.Label>Rate</Form.Label>
                     <Form.Control type="number" placeholder="rate the book" onChange={(e) => {
                         this.setState( {
                             rate: e.target.value,

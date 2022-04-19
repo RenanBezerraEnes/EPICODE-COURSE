@@ -2,6 +2,7 @@ import { Component } from "react";
 import AddComment from "./AddComment";
 import CommentList from './CommentsList'
 
+
 export default class CommentArea extends Component {
 
     render () {
@@ -10,6 +11,7 @@ export default class CommentArea extends Component {
             <>
             <h5>FeedBacks:</h5>
             <AddComment elementId={this.props.asin}/>
+            
             <ul>
                 {this.props.comments && this.props.comments.map(comment => <CommentList  comment={comment} />)}
                 {/* {this.props.comments && this.props.comments.map(comment => {

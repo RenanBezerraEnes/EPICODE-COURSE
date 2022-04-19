@@ -1,15 +1,28 @@
 import { Component } from "react";
+import { Button } from "react-bootstrap";
+import Loading from "./Loading";
 
 class CommentsList extends Component {
+    // state = {
+    //     isLoading: true,
+    // }
 
     render () {
         console.log(this.props.comment, "HELLO WORLD")
         return (
+        <>
+        	{/* {
+                this.state.isLoading && <Loading />
+            } */}
+            {/* <div className="d-flex justify-content-center my-5">
+          <Loading />
+        </div> */}
             <li>
                 rate: {this.props.comment.rate} 
                 <br /> 
-                commentary: {this.props.comment.comment} <button onClick={this.deleteCommentary}>Remove</button>
+                commentary: {this.props.comment.comment} <Button variant="outline-danger" onClick={this.deleteCommentary}>Remove</Button>
             </li>
+            </>
         )
     }
 
@@ -21,6 +34,14 @@ class CommentsList extends Component {
                 'Content-type': 'application/json',
               },
         })
+        if(response.ok) {
+            alert("The commentary has been removed")
+            // this.setState({
+            //     isLoading: false,
+            // })
+        } else {
+            alert("Something is wrong")
+        }
     }
 }
 

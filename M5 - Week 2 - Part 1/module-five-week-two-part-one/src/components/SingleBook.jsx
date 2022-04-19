@@ -35,7 +35,7 @@ class SingleBook extends Component {
           <Card.Title>{title}</Card.Title>
           <Card.Text >{category}</Card.Text>
           <Card.Text>Price: ${price}</Card.Text>
-          {this.state.showCommentArea ? <CommentArea comments={this.state.comments} asin={asin}/> : null}
+          {this.state.selected ? <CommentArea comments={this.state.comments} asin={asin}/> : null}
 
         </Card.Body>
       </Card>     
