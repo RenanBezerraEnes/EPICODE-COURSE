@@ -1,5 +1,6 @@
 import { Component } from "react";
 import { Form, Button} from "react-bootstrap";
+import Loading from "./Loading";
 
 class AddComment extends Component {
     state= 
@@ -7,6 +8,7 @@ class AddComment extends Component {
             comment: "",
             rate: "",
             elementId: this.props.elementId,
+            isLoading: false,
           }
 
 
@@ -33,11 +35,18 @@ class AddComment extends Component {
                     }}/>
                 </Form.Group>
                 <Button type="submit">Submit</Button>
+                {
+                this.state.isLoading && <Loading />
+                } 
             </Form>
+            
         )
     }
 
     onFeedBack = async (e) => {
+        this.setState({
+            isLoading: true,
+        })
         e.preventDefault()
         console.log("click me")
         const response = await fetch ("https://striveschool-api.herokuapp.com/api/comments/", {
@@ -49,8 +58,14 @@ class AddComment extends Component {
         },
       })
       if(response.ok) {
+        this.setState({
+            isLoading: false,
+        })
         alert("Well Done")
       } else {
+        this.setState({
+            isLoading: false,
+        })
           alert("Something went wrong")
       }
 

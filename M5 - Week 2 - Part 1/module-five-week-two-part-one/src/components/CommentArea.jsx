@@ -4,7 +4,6 @@ import CommentList from './CommentsList'
 
 
 export default class CommentArea extends Component {
-
     render () {
         return (
             
@@ -13,7 +12,7 @@ export default class CommentArea extends Component {
             <AddComment elementId={this.props.asin}/>
             
             <ul>
-                {this.props.comments && this.props.comments.map(comment => <CommentList  comment={comment} />)}
+                {this.props.comments &&  this.props.comments.map(comment => <CommentList  comment={comment} />)}
                 {/* {this.props.comments && this.props.comments.map(comment => {
                     console.log('oia eu aqui')
                return <CommentList comment={comment} />

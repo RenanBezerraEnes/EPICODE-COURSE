@@ -3,18 +3,18 @@ import { Button } from "react-bootstrap";
 import Loading from "./Loading";
 
 class CommentsList extends Component {
-    // state = {
-    //     isLoading: true,
-    // }
+    state = {
+        isLoading: false,
+    }
 
     render () {
         console.log(this.props.comment, "HELLO WORLD")
         return (
         <>
-        	{/* {
+        	{
                 this.state.isLoading && <Loading />
-            } */}
-            {/* <div className="d-flex justify-content-center my-5">
+            } 
+             {/* <div className="d-flex justify-content-center my-5">
           <Loading />
         </div> */}
             <li>
@@ -27,6 +27,9 @@ class CommentsList extends Component {
     }
 
     deleteCommentary = async () => {
+        this.setState({
+            isLoading: true,
+        })
         const response = await fetch ("https://striveschool-api.herokuapp.com/api/comments/" + this.props.comment._id, {
             method: "DELETE",
             headers: {
@@ -36,10 +39,13 @@ class CommentsList extends Component {
         })
         if(response.ok) {
             alert("The commentary has been removed")
-            // this.setState({
-            //     isLoading: false,
-            // })
+            this.setState({
+                isLoading: false,
+            })
         } else {
+            this.setState({
+                isLoading: false,
+            })
             alert("Something is wrong")
         }
     }
