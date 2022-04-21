@@ -1,6 +1,9 @@
-import {Navbar, Nav} from 'react-bootstrap'
+import {Navbar, Nav, Form, FormControl} from 'react-bootstrap'
+import { Component } from "react";
 
-const NavBar = () => (
+class NavBar extends Component {
+  render() {
+  return(
   <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Brand href="#home">
@@ -15,9 +18,20 @@ const NavBar = () => (
         <Nav.Link href="#">About</Nav.Link>
         <Nav.Link href="#">Browse</Nav.Link>
       </Nav>
+
+      <Form inline>
+      <FormControl 
+      placeholder="Search"
+      className="mr-sm-2"
+      value= {this.props.search} 
+      onChange={(e) => {
+        this.props.searchNavBarInput( e.currentTarget.value.toLowerCase())
+    }} />
+    </Form>
     </Navbar.Collapse>
   </Navbar>
-)
-
+  )
+ }
+}
 
 export default NavBar
