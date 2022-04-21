@@ -4,12 +4,12 @@ import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
   state = {
-      selected: false,
+      // selected: false,
       showCommentArea: false,
-      comments: [],
+      
   }
-// I assigned the state for false
-
+// I assigned the state for false, so when it's toggle it will change for true
+    
 
   
   render() {
@@ -17,7 +17,7 @@ class SingleBook extends Component {
 
     return (
       <>
-      <Card style={{border: this.state.selected? "2px solid black" : ""}} 
+      <Card style={{border: this.props.selected? "2px solid black" : ""}} 
       key={asin} className="h-100"
       >
         {/* On Img because I want to do something I used setState and I can only access the object with this.state.selected
@@ -28,35 +28,20 @@ class SingleBook extends Component {
         variant="top" 
         src={img}
         onClick={() => {
-          this.setState({ selected: !this.state.selected,  showCommentArea: !this.state.showCommentArea})
+          this.props.selectedBook(!this.props.selected,  {showCommentArea: !this.state.showCommentArea})
         }}
         />
         <Card.Body className="font-weight-bold d-flex flex-column justify-content-between">
           <Card.Title>{title}</Card.Title>
           <Card.Text >{category}</Card.Text>
           <Card.Text>Price: ${price}</Card.Text>
-          {this.state.selected ? <CommentArea comments={this.state.comments} asin={asin}/> : null}
+          {this.props.selected ? <CommentArea asin={asin}/> : null}
 
         </Card.Body>
       </Card>     
       
       </>
     )
-  }
-
-  componentDidMount = async () => {
-    
-      const response = await fetch ("https://striveschool-api.herokuapp.com/api/comments/" + this.props.book.asin, {
-      headers: {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NTAwMzQ2MDcsImV4cCI6MTY1MTI0NDIwN30.q8-1MZ_TDzIXmHqj4QIMnHVpGC0L_YPc-Az587i8PVQ",
-        'Content-type': 'application/json',
-      }
-    })
-    const APIcomments = await response.json();
-    this.setState({
-      comments: APIcomments,
-    })
-    
   }
 }
 
