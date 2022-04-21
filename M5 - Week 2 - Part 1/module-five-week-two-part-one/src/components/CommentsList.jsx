@@ -14,9 +14,7 @@ class CommentsList extends Component {
         	{
                 this.state.isLoading && <Loading />
             } 
-             {/* <div className="d-flex justify-content-center my-5">
-          <Loading />
-        </div> */}
+             
             <li>
                 rate: {this.props.comment.rate} 
                 <br /> 
