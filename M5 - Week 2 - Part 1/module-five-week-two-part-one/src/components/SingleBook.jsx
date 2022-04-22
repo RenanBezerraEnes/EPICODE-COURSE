@@ -36,7 +36,7 @@ class SingleBook extends Component {
           <Card.Title>{title}</Card.Title>
           <Card.Text >{category}</Card.Text>
           <Card.Text>Price: ${price}</Card.Text>
-          {this.props.selected === this.props.book.asin ?  <CommentArea asin={asin}/> : null}
+          {/* {this.props.selected === this.props.book.asin ?  <CommentArea asin={asin}/> : null} */}
 
         </Card.Body>
       </Card>     
