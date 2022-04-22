@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Button } from "react-bootstrap";
+import { Button, ListGroup } from "react-bootstrap";
 import Loading from "./Loading";
 
 class CommentsList extends Component {
@@ -15,11 +15,11 @@ class CommentsList extends Component {
                 this.state.isLoading && <Loading />
             } 
              
-            <li>
-                rate: {this.props.comment.rate} 
+            <ListGroup.Item>
+                <scan className="font-weight-bold">Rate: </scan> {this.props.comment.rate} 
                 <br /> 
-                commentary: {this.props.comment.comment} <Button variant="outline-danger" onClick={this.deleteCommentary}>Remove</Button>
-            </li>
+               <scan className="font-weight-bold">Commentary: </scan> {this.props.comment.comment} <Button size="sm" variant="outline-danger" onClick={this.deleteCommentary}>Remove</Button>
+            </ListGroup.Item>
             </>
         )
     }
