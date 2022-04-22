@@ -7,7 +7,7 @@ class AddComment extends Component {
         {
             comment: "",
             rate: "",
-            elementId: this.props.elementId,
+            elementId: null,
             isLoading: false,
           }
 
@@ -15,7 +15,7 @@ class AddComment extends Component {
     render () {
         console.log(this.props.elementId)
         return (
-            <Form style={{width: "50%"}} className="text-center ml-auto mr-auto" onSubmit={this.onFeedBack}>
+            <Form style={{width: "300px"}} className="text-center ml-auto mr-auto" onSubmit={this.onFeedBack}>
                 <Form.Group>
                     <Form.Label>Rate</Form.Label>
                     <Form.Control type="number" placeholder="rate the book" onChange={(e) => {
@@ -70,6 +70,16 @@ class AddComment extends Component {
       }
 
     }
+
+    componentDidUpdate = (prevProps, prevState) => {
+  
+        if(prevProps.elementId !== this.props.elementId) {
+            this.setState( {
+                ...this.state,
+                elementId: this.props.elementId,
+            })
+        }
+      }
 }
 
 export default AddComment
