@@ -16,7 +16,7 @@ class CommentArea extends Component {
             <>
             
             <AddComment elementId={this.props.selected}/>
-            <h5 className="text-center mt-3">FeedBacks:</h5>
+            <h5 className="text-center mt-3">Click on the Image to show FeedBacks:</h5>
             <ListGroup>
                 {this.state.comments &&  this.state.comments.map(comment => <CommentList  comment={comment} />)}
                 {/* {this.props.comments && this.props.comments.map(comment => {

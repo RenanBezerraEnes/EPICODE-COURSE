@@ -17,7 +17,7 @@ class SingleBook extends Component {
 
     return (
       <>
-      <Card style={{border: this.props.book.asin === this.props.selected? "2px solid black" : ""}} 
+      <Card style={{border: asin === this.props.selected? "2px solid black" : ""}} 
       key={asin} className="h-100"
       >
         {/* On Img because I want to do something I used setState and I can only access the object with this.state.selected
@@ -28,7 +28,7 @@ class SingleBook extends Component {
         variant="top" 
         src={img}
         onClick={() => {
-          this.props.selectedBook( this.props.book.asin )
+          this.props.selectedBook( asin )
           // ? this.props.selected + {showCommentArea: !this.state.showCommentArea} : ""
         }}
         />
