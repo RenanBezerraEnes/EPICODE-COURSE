@@ -1,85 +1,97 @@
-import { Component } from "react";
-import { Form, Button} from "react-bootstrap";
+import { useState, useEffect } from "react";
+import { Form, Button } from "react-bootstrap";
 import Loading from "./Loading";
 
-class AddComment extends Component {
-    state= 
-        {
-            comment: "",
-            rate: "",
-            elementId: null,
-            isLoading: false,
-          }
+const AddComment = ({ elementId, SetSelectedBook }) => {
+	// state=
+	//     {
+	//         comment: "",
+	//         rate: "",
+	//         elementId: null,
+	//         isLoading: false,
+	//       }
 
+	const [comment, setComment] = useState("");
 
-    render () {
-        console.log(this.props.elementId)
-        return (
-            <Form style={{width: "300px"}} className="text-center ml-auto mr-auto" onSubmit={this.onFeedBack}>
-                <Form.Group>
-                    <Form.Label>Rate</Form.Label>
-                    <Form.Control type="number" placeholder="rate the book" onChange={(e) => {
-                        this.setState( {
-                            rate: e.target.value,
-                        } )
-                    }}/>
-                </Form.Group>
+	const [rate, setRate] = useState("");
 
-                <Form.Group>
-                    <Form.Label>FeedBack</Form.Label>
-                    <Form.Control type="text" placeholder="feedback" onChange={(e) => {
-                        console.log(this.state.comment)
-                        this.setState( {
-                            comment: e.target.value,
-                        })
-                    }}/>
-                </Form.Group>
-                <Button type="submit">Submit</Button>
-                {
-                this.state.isLoading && <Loading />
-                } 
-            </Form>
-            
-        )
-    }
+	// const [elementId, SetElementId] = useState(null)
 
-    onFeedBack = async (e) => {
-        this.setState({
-            isLoading: true,
-        })
-        e.preventDefault()
-        console.log("click me")
-        const response = await fetch ("https://striveschool-api.herokuapp.com/api/comments/", {
-        method: "POST",
-        body: JSON.stringify(this.state),
-        headers: {
-          "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NTAwMzQ2MDcsImV4cCI6MTY1MTI0NDIwN30.q8-1MZ_TDzIXmHqj4QIMnHVpGC0L_YPc-Az587i8PVQ",
-          'Content-type': 'application/json',
-        },
-      })
-      if(response.ok) {
-        this.setState({
-            isLoading: false,
-        })
-        alert("Well Done")
-      } else {
-        this.setState({
-            isLoading: false,
-        })
-          alert("Something went wrong")
-      }
+	const [isLoading, SetIsLoading] = useState(false);
 
-    }
+	const onFeedBack = async (e) => {
+		SetIsLoading(false);
+		e.preventDefault();
 
-    componentDidUpdate = (prevProps, prevState) => {
-  
-        if(prevProps.elementId !== this.props.elementId) {
-            this.setState( {
-                ...this.state,
-                elementId: this.props.elementId,
-            })
-        }
-      }
-}
+		console.log("click me");
 
-export default AddComment
+		const response = await fetch(
+			"https://striveschool-api.herokuapp.com/api/comments/",
+			{
+				method: "POST",
+				body: JSON.stringify({ comment, rate, elementId }),
+				headers: {
+					Authorization:
+						"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NTAwMzQ2MDcsImV4cCI6MTY1MTI0NDIwN30.q8-1MZ_TDzIXmHqj4QIMnHVpGC0L_YPc-Az587i8PVQ",
+					"Content-type": "application/json",
+				},
+			}
+		);
+		if (response.ok) {
+			SetIsLoading(false);
+			alert("Well Done");
+		} else {
+			SetIsLoading(false);
+			alert("Something went wrong");
+		}
+	};
+
+	useEffect(() => {
+		onFeedBack();
+	}, [SetSelectedBook]);
+
+	// componentDidUpdate = (prevProps, prevState) => {
+
+	//     if(prevProps.elementId !== this.props.elementId) {
+	//         this.setState( {
+	//             ...this.state,
+	//             elementId: this.props.elementId,
+	//         })
+	//     }
+
+	console.log(elementId);
+	return (
+		<Form
+			style={{ width: "300px" }}
+			className="text-center ml-auto mr-auto"
+			onSubmit={onFeedBack}
+		>
+			<Form.Group>
+				<Form.Label>Rate</Form.Label>
+				<Form.Control
+					type="number"
+					placeholder="rate the book"
+					onChange={(e) => {
+						setRate(e.target.value);
+					}}
+				/>
+			</Form.Group>
+
+			<Form.Group>
+				<Form.Label>FeedBack</Form.Label>
+				<Form.Control
+					type="text"
+					placeholder="feedback"
+					onChange={(e) => {
+						setComment(e.target.value);
+					}}
+				/>
+			</Form.Group>
+			<Button type="submit">Submit</Button>
+			<br />
+			{isLoading && <Loading />}
+		</Form>
+	);
+};
+
+export default AddComment;

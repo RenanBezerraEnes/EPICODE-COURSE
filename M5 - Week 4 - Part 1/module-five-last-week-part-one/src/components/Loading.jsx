@@ -1,13 +1,7 @@
-import { Component } from "react";
-import {Spinner} from 'react-bootstrap';
+import { Spinner } from "react-bootstrap";
 
-class Loading extends Component {
-    
-    render() { 
-        return (
-            <Spinner animation="border" />
-        )
-    }
-}
- 
-export default Loading
+const Loading = () => {
+	return <Spinner animation="border" />;
+};
+
+export default Loading;
