@@ -4,17 +4,14 @@ import CommentList from "./CommentsList";
 import { ListGroup } from "react-bootstrap";
 
 const CommentArea = ({ selected, SetSelectedBook }) => {
-	// state = {
-	//     comments: [],
-	// }
 	const [comments, setComments] = useState([]);
 
 	useEffect(() => {
 		getCommentaries();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
-	const getCommentaries = async (e) => {
-		// e.preventDefault()
+	const getCommentaries = async () => {
 		const response = await fetch(
 			"https://striveschool-api.herokuapp.com/api/comments/" + selected,
 			{
@@ -31,6 +28,7 @@ const CommentArea = ({ selected, SetSelectedBook }) => {
 
 	useEffect(() => {
 		getCommentaries();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [selected]);
 
 	console.log(selected, "LOOK ME");
@@ -43,13 +41,6 @@ const CommentArea = ({ selected, SetSelectedBook }) => {
 			<ListGroup>
 				{comments &&
 					comments.map((comment) => <CommentList comment={comment} />)}
-				{/* {this.props.comments && this.props.comments.map(comment => {
-                    console.log('oia eu aqui')
-               return <CommentList comment={comment} />
-                })} */}
-				{/* It is really important to console.log everything to understand, and in the second case using map with curly braces, make possible to console.log
-                otherwise it's not possible to console.log because it will return automatically
-                */}
 			</ListGroup>
 		</>
 	);

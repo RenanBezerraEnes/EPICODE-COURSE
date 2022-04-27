@@ -6,9 +6,7 @@ const CommentsList = ({ comment }) => {
 	const [isLoading, SetIsLoading] = useState(false);
 
 	const deleteCommentary = async () => {
-		SetIsLoading({
-			isLoading: true,
-		});
+		SetIsLoading(true);
 		const response = await fetch(
 			"https://striveschool-api.herokuapp.com/api/comments/" + comment._id,
 			{
@@ -22,13 +20,9 @@ const CommentsList = ({ comment }) => {
 		);
 		if (response.ok) {
 			alert("The commentary has been removed");
-			SetIsLoading({
-				isLoading: false,
-			});
+			SetIsLoading(false);
 		} else {
-			SetIsLoading({
-				isLoading: false,
-			});
+			SetIsLoading(false);
 			alert("Something is wrong");
 		}
 	};

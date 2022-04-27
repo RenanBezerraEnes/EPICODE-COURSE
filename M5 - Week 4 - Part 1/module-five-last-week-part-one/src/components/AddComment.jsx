@@ -3,27 +3,15 @@ import { Form, Button } from "react-bootstrap";
 import Loading from "./Loading";
 
 const AddComment = ({ elementId, SetSelectedBook }) => {
-	// state=
-	//     {
-	//         comment: "",
-	//         rate: "",
-	//         elementId: null,
-	//         isLoading: false,
-	//       }
-
 	const [comment, setComment] = useState("");
 
 	const [rate, setRate] = useState("");
 
-	// const [elementId, SetElementId] = useState(null)
-
 	const [isLoading, SetIsLoading] = useState(false);
 
 	const onFeedBack = async (e) => {
-		SetIsLoading(false);
 		e.preventDefault();
-
-		console.log("click me");
+		SetIsLoading(true);
 
 		const response = await fetch(
 			"https://striveschool-api.herokuapp.com/api/comments/",
@@ -38,8 +26,8 @@ const AddComment = ({ elementId, SetSelectedBook }) => {
 			}
 		);
 		if (response.ok) {
-			SetIsLoading(false);
 			alert("Well Done");
+			SetIsLoading(false);
 		} else {
 			SetIsLoading(false);
 			alert("Something went wrong");
@@ -50,16 +38,6 @@ const AddComment = ({ elementId, SetSelectedBook }) => {
 		onFeedBack();
 	}, [SetSelectedBook]);
 
-	// componentDidUpdate = (prevProps, prevState) => {
-
-	//     if(prevProps.elementId !== this.props.elementId) {
-	//         this.setState( {
-	//             ...this.state,
-	//             elementId: this.props.elementId,
-	//         })
-	//     }
-
-	console.log(elementId);
 	return (
 		<Form
 			style={{ width: "300px" }}

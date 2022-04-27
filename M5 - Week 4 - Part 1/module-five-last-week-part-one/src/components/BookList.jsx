@@ -5,17 +5,8 @@ import fantasy from "../data/fantasy.json";
 import CommentArea from "./CommentArea";
 
 const BookList = ({ search }) => {
-	// state = {
-	//     book: fantasy,
-	//     selected: null,
-	// }
-
-	// selectedBook = (newState) => {
-	//   this.setState({
-	//     selected: newState,
-	//   })
-	// }
-	// const [load, setLoad] = useState(true) only for funcions
+	// Before I had a class Component and now I have a function Component,
+	// So to use the State I need have a const, with the state and the setState and this will be = useState
 
 	const [book, setBook] = useState(fantasy);
 
@@ -23,21 +14,6 @@ const BookList = ({ search }) => {
 
 	return (
 		<Container className="d-flex">
-			{/* I removed the FormControl from this component and I applied it to the NavBar Component, but for accesing the filter and map
-        I elevate the state for the nearest parent of both Components and with props and one function I can assign this props to the filter and map
-        and also to the values on the new FormControl on 
-        */}
-
-			{/* <FormControl
-          placeholder="Search"
-          value={this.props.search}
-          onChange={(e) => {
-            this.props.searchNavBarInput({ search: e.currentTarget.value.toLowerCase() })
-        // }}
-          // onChange={(e) => {
-          //     this.setState({ search: e.currentTarget.value.toLowerCase() })
-          // }}
-        /> */}
 			<Row>
 				{book
 					.filter(
