@@ -1,4 +1,5 @@
-import { Card } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const SingleBook = ({ book, selected, SetSelectedBook }) => {
 	const { asin, img, title, category, price } = book;
@@ -21,6 +22,14 @@ const SingleBook = ({ book, selected, SetSelectedBook }) => {
 					<Card.Title>{title}</Card.Title>
 					<Card.Text>{category}</Card.Text>
 					<Card.Text>Price: ${price}</Card.Text>
+					<Button
+						variant="secondary"
+						size="sm"
+						as={Link}
+						to={"/BookDetails/" + asin}
+					>
+						Details
+					</Button>
 				</Card.Body>
 			</Card>
 		</>

@@ -17,7 +17,7 @@ const CommentArea = ({ selected, SetSelectedBook }) => {
 			{
 				headers: {
 					Authorization:
-						"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NTAwMzQ2MDcsImV4cCI6MTY1MTI0NDIwN30.q8-1MZ_TDzIXmHqj4QIMnHVpGC0L_YPc-Az587i8PVQ",
+						"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjQyMWRiNGRhMTNhZjAwMTUyYzFjNWQiLCJpYXQiOjE2NTEyNTAyNDUsImV4cCI6MTY1MjQ1OTg0NX0.Ut-v5b5wqmTvLhWgQsX5yuEFpy4Lg_H_54G1TswMzk4",
 					"Content-type": "application/json",
 				},
 			}

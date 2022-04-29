@@ -1,4 +1,5 @@
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const NavBar = ({ search, setSearch }) => {
 	return (
@@ -14,9 +15,15 @@ const NavBar = ({ search, setSearch }) => {
 			</Navbar.Brand>
 			<Navbar.Collapse id="responsive-navbar-nav">
 				<Nav className="mr-auto">
-					<Nav.Link href="#">Home</Nav.Link>
-					<Nav.Link href="#">About</Nav.Link>
-					<Nav.Link href="#">Browse</Nav.Link>
+					<Nav.Link as={Link} to="/">
+						Home
+					</Nav.Link>
+					<Nav.Link as={Link} to="/about">
+						About
+					</Nav.Link>
+					<Nav.Link as={Link} to="/Browse">
+						Browse
+					</Nav.Link>
 				</Nav>
 
 				<Form inline>
@@ -29,6 +36,10 @@ const NavBar = ({ search, setSearch }) => {
 							setSearch(e.target.value.toLowerCase());
 						}}
 					/>
+
+					<Button as={Link} to="/Login">
+						Login
+					</Button>
 				</Form>
 			</Navbar.Collapse>
 		</Navbar>

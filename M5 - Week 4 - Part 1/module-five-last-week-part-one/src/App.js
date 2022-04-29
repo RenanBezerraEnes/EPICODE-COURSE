@@ -3,32 +3,33 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import NavBar from "./components/NavBar";
 import MyBadge from "./components/MyBadge";
 import BookList from "./components/BookList";
+import BookDetails from "./components/BookDetails";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import NotFound from "./components/NotFound";
+import Login from "./components/Login";
 
 function App() {
-	// state = {
-	//   search: "",
-	// }
-
-	// searchNavBarInput = (newValue) => {
-	//   this.setState({
-	//     search: newValue,
-	//   })
-	// }
-
-	// I changed this component, before it was a class component and now I am updating it for a function component.
-
 	const [search, setSearch] = useState("");
-	// const [array, setArray] = useState([])
-	// setArray([1,3,5])
-	//setSearch("hello")
 
 	return (
-		<div>
+		<BrowserRouter>
 			<NavBar search={search} setSearch={setSearch} />
-			<MyBadge title="Welcome to the BookStore" color="danger" />
-			<BookList search={search} />
-		</div>
+			<Routes>
+				<Route
+					path="/"
+					element={
+						<>
+							<MyBadge title="Welcome to the BookStore" color="danger" />{" "}
+							<BookList search={search} />
+						</>
+					}
+				/>
+				<Route path="/BookDetails/:bookId" element={<BookDetails />} />
+				<Route path="/Login" element={<Login />} />
+				<Route element={<NotFound />} path="*" />
+			</Routes>
+		</BrowserRouter>
 	);
 }
 
