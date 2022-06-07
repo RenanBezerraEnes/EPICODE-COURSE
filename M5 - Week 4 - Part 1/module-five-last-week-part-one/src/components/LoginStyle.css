@@ -1,0 +1,38 @@
+.mainLogin {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 57px );
+
+    background-color: black;
+}
+
+.mainLoginRow{
+    height: 550px;
+    width: 400px;
+    box-shadow: 11px 12px 220px 12px rgb(175, 175, 175);
+    border-radius: 60px;
+}
+
+@media (max-width: 425px) {
+    .mainLogin{
+        max-width: 425px;
+        min-width: 320px;
+        width: 100%;
+    }
+    .mainLoginRow{
+        width: 100%;
+        border-radius: 60px;
+    }
+}
+
+
+
+.mainLoginCol {
+    display: flex;
+    justify-content: center;
+    
+    background: linear-gradient(179deg, rgb(138 0 243) 10%, rgb(85 67 233) 50%, rgb(174 103 229) 100%);
+    color: white;
+    border-radius: 60px;
+}
