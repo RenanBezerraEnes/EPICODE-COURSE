@@ -26,7 +26,7 @@ function App() {
 					}
 				/>
 				<Route path="/BookDetails/:bookId" element={<BookDetails />} />
-				<Route path="/Login" element={<Login />} />
+				<Route path="/Login" element={<Login />}></Route>
 				<Route element={<NotFound />} path="*" />
 			</Routes>
 		</BrowserRouter>
