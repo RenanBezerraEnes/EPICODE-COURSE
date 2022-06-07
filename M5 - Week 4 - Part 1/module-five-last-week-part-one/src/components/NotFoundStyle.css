@@ -1,0 +1,19 @@
+.NotFoundBackGround {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    height: calc(100vh - 57px );
+
+    background-color: black;
+}
+
+@media (max-width: 425px) {
+    .NotFoundBackGround{
+        max-width: 425px;
+        min-width: 320px;
+        width: 100%;
+    }
+    .img-notFound{
+        width: 100%;
+    }
+}
