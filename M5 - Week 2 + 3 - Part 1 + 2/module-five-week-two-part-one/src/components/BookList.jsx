@@ -5,29 +5,29 @@ import fantasy from "../data/fantasy.json";
 import CommentArea from "./CommentArea";
 
 class BookList extends Component {
-  state = {
-      book: fantasy,
-      selected: null,
-  }
+	state = {
+		book: fantasy,
+		selected: null,
+	};
 
-  selectedBook = (newState) => {
-    this.setState({
-      selected: newState,
-    })
-  }
+	selectedBook = (newState) => {
+		this.setState({
+			selected: newState,
+		});
+	};
 
-  render() {
-    console.log(this.state.book, "test")
-    // const [load, setLoad] = useState(true) only for funcions
+	render() {
+		console.log(this.state.book, "test");
+		// const [load, setLoad] = useState(true) only for funcions
 
-    return (
-      <Container className="d-flex">
-        {/* I removed the FormControl from this component and I applied it to the NavBar Component, but for accesing the filter and map
+		return (
+			<Container className="d-flex">
+				{/* I removed the FormControl from this component and I applied it to the NavBar Component, but for accesing the filter and map
         I elevate the state for the nearest parent of both Components and with props and one function I can assign this props to the filter and map
         and also to the values on the new FormControl on 
         */}
 
-        {/* <FormControl
+				{/* <FormControl
           placeholder="Search"
           value={this.props.search}
           onChange={(e) => {
@@ -37,25 +37,32 @@ class BookList extends Component {
           //     this.setState({ search: e.currentTarget.value.toLowerCase() })
           // }}
         /> */}
-          <Row>
-          {this.state.book 
-          .filter(book => book.title.toLowerCase().indexOf(this.props.search) !==-1 || book.category.toLowerCase().indexOf(this.props.search) !==-1)
-          .map((book) => (
-            <Col xs={12} md={3} className="my-3" key={book.asin}>
-              <SingleBook book={book} selected={this.state.selected} selectedBook={this.selectedBook}/>
-            </Col>
-          ))
-          }
-        </Row>
+				<Row>
+					{this.state.book
+						.filter(
+							(book) =>
+								book.title.toLowerCase().indexOf(this.props.search) !== -1 ||
+								book.category.toLowerCase().indexOf(this.props.search) !== -1
+						)
+						.map((book) => (
+							<Col xs={12} md={3} className="my-3" key={book.asin}>
+								<SingleBook
+									book={book}
+									selected={this.state.selected}
+									selectedBook={this.selectedBook}
+								/>
+							</Col>
+						))}
+				</Row>
 
-        <Row  className="ml-5 mt-3">
-        <Col xs={12}>
-          <CommentArea selected={this.state.selected}/>
-          </Col>
-        </Row>
-      </Container>
-    );
-  }
+				<Row className="ml-5 mt-3">
+					<Col xs={12}>
+						<CommentArea selected={this.state.selected} />
+					</Col>
+				</Row>
+			</Container>
+		);
+	}
 }
 
 export default BookList;
